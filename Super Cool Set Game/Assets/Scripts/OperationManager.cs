@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +15,6 @@ public class OperationManager : MonoBehaviour {
     }
 
     private void RegenerateText() {
-        text.text = string.Join("\n", _sets.Select(s => s.ToString()));
+        text.text = string.Join("\n", _sets.Select(s => s.ToString()).Where(s => s != ""));
     }
 }

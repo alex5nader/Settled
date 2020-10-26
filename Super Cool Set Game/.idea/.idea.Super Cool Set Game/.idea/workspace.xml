@@ -16,62 +16,21 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a77b62a-aea2-482f-9e0e-3a6e63d74517" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-    </list>
-    <list id="fa150619-f07b-424a-8824-e558ed7de77a" name="Ugly demo" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/contentModel.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/riderModule.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Primitives.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Primitives/Circle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Primitives/Circle.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Primitives/Square.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Primitives/Square.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Draggable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Draggable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/OperationManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/OperationManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Set.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Set.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/ClusterInputManager.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/NetworkManager.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/PresetManager.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/XRSettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Super Cool Set Game.sln.DotSettings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/OperationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/OperationManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +38,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="set" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -106,9 +70,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SuperCoolSetGame.asmdef" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Draggable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/OperationManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Set.cs" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/OperationManager.cs" />
       </list>
     </option>
   </component>
@@ -152,12 +116,12 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="4a77b62a-aea2-482f-9e0e-3a6e63d74517" name="Default Changelist" comment="" />
-      <changelist id="fa150619-f07b-424a-8824-e558ed7de77a" name="Ugly demo" comment="" />
+      <changelist id="" name="Ugly demo" comment="" />
       <created>1603663523293</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603663523293</updated>
-      <workItem from="1603663530108" duration="12990000" />
+      <workItem from="1603663530108" duration="13790000" />
     </task>
     <task id="LOCAL-00001" summary="Ugly demo">
       <created>1603676626334</created>
@@ -166,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603676626334</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Ugly demo">
+      <created>1603677147844</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603677147844</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,7 +150,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -200,10 +183,14 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2704" y="337" width="1324" height="811" key="SettingsEditor/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603667775676" />
-    <state x="3050" y="618" width="290" height="167" key="VCS.ChangelistChooser" timestamp="1603676665458">
+    <state x="3050" y="618" width="290" height="167" key="VCS.ChangelistChooser" timestamp="1603677140881">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="3050" y="618" width="290" height="167" key="VCS.ChangelistChooser/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603676665458" />
+    <state x="3050" y="618" width="290" height="167" key="VCS.ChangelistChooser/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603677140881" />
+    <state x="2795" y="438" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1603677186856">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2795" y="438" width="800" height="526" key="Vcs.Push.Dialog.v2/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603677186856" />
     <state x="2980" y="430" width="430" height="542" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1603676283183">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -212,5 +199,9 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2875" y="275" width="649" height="855" key="find.popup/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603664170543" />
+    <state x="2887" y="408" width="615" height="586" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603677167902">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2887" y="408" width="615" height="586" key="git4idea.branch.GitSmartOperationDialog/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603677167902" />
   </component>
 </project>
