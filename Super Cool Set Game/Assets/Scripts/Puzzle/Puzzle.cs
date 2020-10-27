@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -13,7 +14,6 @@ namespace Puzzle {
             public SetData[] setData;
             public Sprite[] elementData;
             public Sprite sprite;
-            public string textName;
         }
         
         [SerializeField] private Sprite[] elements;
@@ -30,6 +30,8 @@ namespace Puzzle {
             var rend = go.AddComponent<Image>();
             rend.sprite = sprite;
             rend.color = new Color(Random.value, Random.value, Random.value);
+
+            go.AddComponent<Element>();
             
             if (collide) {
                 go.AddComponent<BoxCollider2D>();
@@ -45,12 +47,15 @@ namespace Puzzle {
             drag.elementsTray = elementsTray;
         }
 
-        private static GameObject MakeFixedSet(SetData data, Transform parent, float itemSize, bool mutable) {
+        private static (GameObject, IEnumerable<IEnumerator>) MakeFixedSet(SetData data, Transform parent, float itemSize, bool mutable) {
+            var coros = new List<IEnumerator>();
+            
             var go = new GameObject("fixed set", typeof(RectTransform));
             
             go.transform.SetParent(parent, false);
-            var tr = go.transform;
-            var rect = ((RectTransform) tr).rect;
+            var tr = (RectTransform) go.transform;
+            var rect = tr.rect;
+            tr.ForceUpdateRectTransforms();
             var pos = tr.position;
             tr.position = new Vector3(pos.x, pos.y, pos.z + 1);
             
@@ -62,24 +67,27 @@ namespace Puzzle {
 
             var coll = go.AddComponent<BoxCollider2D>();
             coll.isTrigger = true;
+
+            IEnumerator SetSizeNextFrame() {
+                tr.ForceUpdateRectTransforms();
+                yield return null;
+                coll.size = tr.rect.size;
+            }
+            coros.Add(SetSizeNextFrame());
+            
             var bounds = coll.bounds;
 
             go.AddComponent<Rigidbody2D>().isKinematic = true;
 
-            if (mutable) {
-                var set = go.AddComponent<MutableSet>();
-                if (!string.IsNullOrWhiteSpace(data.textName)) {
-                    var textGo = GameObject.Find(data.textName);
-                    Debug.Log("found text", textGo);
-                    set.contentsText = textGo.GetComponent<Text>();
-                }
-            }
+            var set = mutable ? go.AddComponent<MutableSet>() : go.AddComponent<Set>();
 
             if (data.setData.Length != 0) {
                 var size = Math.Min(rect.width, rect.height);
                 
                 foreach (var child in data.setData) {
-                    MakeFixedSet(child, tr, itemSize / size, false).transform.parent = tr;
+                    var (childGo, childCoros) = MakeFixedSet(child, tr, itemSize / size, false);
+                    childGo.transform.parent = tr;
+                    coros.AddRange(childCoros);
                 }
             }
 
@@ -94,12 +102,14 @@ namespace Puzzle {
                     );
                 }
             }
+            
+            set.RecalculateElements();
 
-            return go;
+            return (go, coros);
         }
 
-        private static void MakeFloatingSet(SetData data, Transform parent, Transform dragHolder, Transform elementsTray, float itemSize) {
-            var go = MakeFixedSet(data, parent, itemSize, false);
+        private static IEnumerable<IEnumerator> MakeFloatingSet(SetData data, Transform parent, Transform dragHolder, Transform elementsTray, float itemSize) {
+            var (go, coros) = MakeFixedSet(data, parent, itemSize, false);
             
             go.name = "floating set";
             
@@ -110,30 +120,40 @@ namespace Puzzle {
             drag.elementsTray = elementsTray;
             
             go.GetComponent<Image>().color = new Color(Random.value, Random.value, Random.value);
+
+            return coros;
         }
 
-        public void CreateElements(Transform parent, Transform dragHolder, float itemSize) {
+        public IEnumerable<IEnumerator> CreateElements(Transform parent, Transform dragHolder, float itemSize) {
             foreach (var e in elements) {
                 MakeFloatingElement(e, parent, dragHolder, parent);
             }
+
+            var coros = new List<IEnumerator>();
             foreach (var s in setElements) {
-                MakeFloatingSet(s, parent, dragHolder, parent, itemSize);
+                coros.AddRange(MakeFloatingSet(s, parent, dragHolder, parent, itemSize));
             }
+
+            return coros;
         }
 
         [SerializeField] private SetData[] fixedSets;
         
         public int FixedSetCount => fixedSets.Length;
 
-        public void CreateFixedSets(Transform parent, float itemSize) {
+        public IEnumerable<IEnumerator> CreateFixedSets(Transform parent, float itemSize) {
+            var coros = new List<IEnumerator>();
             foreach (var s in fixedSets) {
-                MakeFixedSet(s, parent, itemSize, true);
+                var (_, setCoros) = MakeFixedSet(s, parent, itemSize, true);
+                coros.AddRange(setCoros);
             }
+            return coros;
         }
 
-        public void CreateTargetSet(Transform parent, float itemSize) {
-            var go = MakeFixedSet(target, parent, itemSize, false);
+        public IEnumerable<IEnumerator> CreateTargetSet(Transform parent, float itemSize) {
+            var (go, coros) = MakeFixedSet(target, parent, itemSize, false);
             go.name = "target set";
+            return coros;
         }
     }
 }

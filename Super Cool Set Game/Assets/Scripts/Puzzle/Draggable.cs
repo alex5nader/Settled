@@ -1,23 +1,33 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Puzzle {
-    [RequireComponent(typeof(BoxCollider2D))]
+    [RequireComponent(typeof(RectTransform), typeof(BoxCollider2D), typeof(BaseElement))]
     public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
-        private new Transform transform;
+        private new RectTransform transform;
         private new BoxCollider2D collider;
+
+        private Camera mainCamera;
+
+        private BaseElement element;
+
+        private MutableSet parentSet;
 
         public Transform elementsTray;
         public Transform holder;
 
-        private GameObject hovered;
-
+        // private MutableSet hoveredSet;
         private Vector3? offset;
 
         private void Awake() {
-            transform = GetComponent<Transform>();
+            mainCamera = Camera.main;
+
+            transform = GetComponent<RectTransform>();
             collider = GetComponent<BoxCollider2D>();
+            element = GetComponent<BaseElement>();
         }
 
         private void Update() {
@@ -27,32 +37,50 @@ namespace Puzzle {
             }
         }
 
-        private void OnTriggerStay2D(Collider2D other) {
-            Debug.Log($"colliding with {other.name}", other);
-            var inside = other.Contains(collider);
-            var alreadyTracked = hovered != null && other.gameObject == hovered.gameObject;
-            if (!alreadyTracked && inside) {
-                hovered = other.gameObject;
-            } else if (alreadyTracked && !inside) {
-                hovered = null;
-            }
-        }
-
-        private void OnTriggerExit2D(Collider2D other) {
-            if (hovered == other.gameObject) {
-                hovered = null;
-            }
-        }
+        // private void OnTriggerStay2D(Collider2D other) {
+        //     var inside = other.Contains(collider);
+        //     var alreadyTracked = hoveredSet != null && other.gameObject == hoveredSet.gameObject;
+        //     if (!alreadyTracked && inside) {
+        //         hoveredSet = other.GetComponent<MutableSet>();
+        //     } else if (alreadyTracked && !inside) {
+        //         hoveredSet = null;
+        //     }
+        // }
+        //
+        // private void OnTriggerExit2D(Collider2D other) {
+        //     if (hoveredSet && hoveredSet.gameObject == other.gameObject) {
+        //         hoveredSet = null;
+        //     }
+        // }
 
         public void OnPointerDown(PointerEventData eventData) {
-            Debug.Log("clicked on me", gameObject);
             offset = Input.mousePosition - transform.position;
+
             transform.SetParent(holder, true);
         }
 
         public void OnPointerUp(PointerEventData eventData) {
             offset = null;
-            transform.SetParent(hovered ? hovered.transform : elementsTray, true);
+
+            var list = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(eventData, list);
+
+            var hoveredSet = list
+                .Select(res => res.gameObject.GetComponent<MutableSet>())
+                .First(s => s);
+
+            if (parentSet) {
+                parentSet.Remove(element, elementsTray);
+            }
+
+            if (hoveredSet) {
+                Debug.Log($"adding to {hoveredSet.name}", hoveredSet);
+                hoveredSet.Add(element);
+
+                parentSet = hoveredSet;
+            } else {
+                transform.SetParent(elementsTray, true);
+            }
         }
     }
 }

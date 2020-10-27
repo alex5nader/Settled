@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Puzzle {
@@ -10,17 +12,23 @@ namespace Puzzle {
         [SerializeField] private RectTransform[] inputBySize;
         [SerializeField] private RectTransform output;
 
+        private void StartAll(IEnumerable<IEnumerator> coros) {
+            foreach (var coro in coros) {
+                StartCoroutine(coro);
+            }
+        }
+
         public void Load() {
-            puzzle.CreateElements(elements, dragHolder, 50);
+            StartAll(puzzle.CreateElements(elements, dragHolder, 50));
             
             for (var i = 0; i < puzzle.FixedSetCount; i++) {
                 inputBySize[i].gameObject.SetActive(false);
             }
             var fixedSetParent = inputBySize[puzzle.FixedSetCount - 1];
             fixedSetParent.gameObject.SetActive(true);
-            puzzle.CreateFixedSets(fixedSetParent, 250);
+            StartAll(puzzle.CreateFixedSets(fixedSetParent, 250));
 
-            puzzle.CreateTargetSet(output, 250);
+            StartAll(puzzle.CreateTargetSet(output, 250));
         }
     }
 }
