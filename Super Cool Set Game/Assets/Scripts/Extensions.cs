@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public static class Extensions {
@@ -14,6 +15,13 @@ public static class Extensions {
 
         return Between(otherCenter.x, selfMin.x, selfMax.x)
             && Between(otherCenter.y, selfMin.y, selfMax.y);
+    }
+
+    public static IEnumerable<Transform> Children(this Transform self) {
+        var count = self.childCount;
+        for (var i = 0; i < count; i++) {
+            yield return self.GetChild(i);
+        }
     }
 
     private static Vector2 XY(this Vector3 v) {

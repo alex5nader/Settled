@@ -6,17 +6,17 @@ namespace Puzzle {
     public class OperationManager : MonoBehaviour {
         [SerializeField] private Text text;
 
-        private MutableSet[] _sets;
+        private MutableSet[] sets;
 
         private void Awake() {
-            _sets = FindObjectsOfType<MutableSet>();
-            foreach (var set in _sets) {
+            sets = FindObjectsOfType<MutableSet>();
+            foreach (var set in sets) {
                 set.ContentsChanged += RegenerateText;
             }
         }
 
         private void RegenerateText() {
-            text.text = string.Join("\n", _sets.Select(s => s.ToString()).Where(s => s != ""));
+            text.text = string.Join("\n", sets.Select(s => s.ToString()).Where(s => s != ""));
         }
     }
 }

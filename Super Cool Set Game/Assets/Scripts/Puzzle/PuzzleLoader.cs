@@ -5,35 +5,22 @@ namespace Puzzle {
         [SerializeField]
         private Puzzle puzzle;
 
-        private GameObject elements;
-        private GameObject sets;
-        private GameObject fixedSets;
-
-        private void Awake() {
-            var self = transform;
-            elements = new GameObject("elements");
-            elements.transform.parent = self;
-            sets = new GameObject("sets");
-            sets.transform.parent = self;
-            fixedSets = new GameObject("fixed sets");
-            fixedSets.transform.parent = self;
-        }
+        [SerializeField] private RectTransform dragHolder;
+        [SerializeField] private RectTransform elements;
+        [SerializeField] private RectTransform[] inputBySize;
+        [SerializeField] private RectTransform output;
 
         public void Load() {
-            var (newElements, newSets) = puzzle.CreateElements();
-            foreach (var element in newElements) {
-                element.transform.parent = elements.transform;
+            puzzle.CreateElements(elements, dragHolder, 50);
+            
+            for (var i = 0; i < puzzle.FixedSetCount; i++) {
+                inputBySize[i].gameObject.SetActive(false);
             }
+            var fixedSetParent = inputBySize[puzzle.FixedSetCount - 1];
+            fixedSetParent.gameObject.SetActive(true);
+            puzzle.CreateFixedSets(fixedSetParent, 250);
 
-            foreach (var set in newSets) {
-                set.transform.parent = sets.transform;
-            }
-
-            foreach (var fixedSet in puzzle.CreateFixedSets()) {
-                fixedSet.transform.parent = fixedSets.transform;
-            }
-
-            puzzle.CreateTargetSet().transform.parent = transform;
+            puzzle.CreateTargetSet(output, 250);
         }
     }
 }
