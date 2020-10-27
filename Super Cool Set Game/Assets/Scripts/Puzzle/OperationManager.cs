@@ -6,10 +6,10 @@ namespace Puzzle {
     public class OperationManager : MonoBehaviour {
         [SerializeField] private Text text;
 
-        private Set[] _sets;
+        private MutableSet[] _sets;
 
         private void Awake() {
-            _sets = FindObjectsOfType<Set>();
+            _sets = FindObjectsOfType<MutableSet>();
             foreach (var set in _sets) {
                 set.ContentsChanged += RegenerateText;
             }

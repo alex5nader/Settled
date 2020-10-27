@@ -26,22 +26,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a77b62a-aea2-482f-9e0e-3a6e63d74517" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset_Renderer.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineAsset_Renderer.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Green Square.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Green Square.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Yellow Set.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Yellow Set.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Primitives/Diamond.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Primitives/Diamond.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Primitives/Hexagon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Primitives/Hexagon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Primitives/Triangle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Primitives/Triangle.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Puzzles.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Test Puzzle.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Test Puzzle.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Puzzle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Puzzle.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Alex.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Alex.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/VFXManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Puzzles/AlexPuzzle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Puzzles/AlexPuzzle.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/OperationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/OperationManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/MutableSet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/MutableSet.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +73,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A42A0DB-0BFD-4389-9489-41F1DD09A11A/77/dcf309b7/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A42A0DB-0BFD-4389-9489-41F1DD09A11A/f7/ceeebc6c/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A42A0DB-0BFD-4389-9489-41F1DD09A11A/e6/4bd5078f/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/f6/388ac686/Color.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/99258562-0D64-4271-98DD-F3A0E1467733/45/7580fbf1/020002E4.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/cb/65f87f3d/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A42A0DB-0BFD-4389-9489-41F1DD09A11A/55/16440ee0/Bounds.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/701ED04D-BDB8-4B20-BD9E-BCA7DCC4A2FD/c3/e85c683c/Input.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A42A0DB-0BFD-4389-9489-41F1DD09A11A/8b/50a0a900/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
@@ -87,6 +100,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/OperationManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Shaders/OutlineSample.shadersubgraph" />
         <option value="$PROJECT_DIR$/Assets/Shaders/Outline.shadergraph" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Draggable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/OperationManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/MutableSet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Puzzle.cs" />
       </list>
     </option>
   </component>
@@ -136,6 +155,7 @@
       <updated>1603663523293</updated>
       <workItem from="1603663530108" duration="14084000" />
       <workItem from="1603678746388" duration="2997000" />
+      <workItem from="1603746647073" duration="10853000" />
     </task>
     <task id="LOCAL-00001" summary="Ugly demo">
       <created>1603676626334</created>
@@ -151,7 +171,21 @@
       <option name="project" value="LOCAL" />
       <updated>1603677147844</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Mess with light/shadow">
+      <created>1603746736489</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603746736489</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Create Puzzle namespace">
+      <created>1603746758202</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603746758202</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,17 +221,19 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Ugly demo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ugly demo" />
+    <MESSAGE value="Mess with light/shadow" />
+    <MESSAGE value="Create Puzzle namespace" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create Puzzle namespace" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2919" y="506" width="614" height="391" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603683550169">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2919" y="506" width="614" height="391" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603683550169" />
-    <state x="2958" y="421" width="473" height="561" key="RiderGenerateDialog" timestamp="1603675192580">
+    <state x="2958" y="421" width="473" height="561" key="RiderGenerateDialog" timestamp="1603748134272">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2958" y="421" width="473" height="561" key="RiderGenerateDialog/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603675192580" />
+    <state x="2958" y="421" width="473" height="561" key="RiderGenerateDialog/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603748134272" />
     <state x="2704" y="337" width="1324" height="811" key="SettingsEditor" timestamp="1603667775676">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -222,5 +258,9 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2887" y="408" width="615" height="586" key="git4idea.branch.GitSmartOperationDialog/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603677167902" />
+    <state x="2863" y="320" width="672" height="678" key="search.everywhere.popup" timestamp="1603752588474">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2863" y="320" width="672" height="678" key="search.everywhere.popup/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603752588474" />
   </component>
 </project>

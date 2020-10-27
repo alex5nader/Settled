@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -5,10 +6,10 @@ using UnityEngine.UI;
 
 namespace Puzzle {
     [RequireComponent(typeof(Collider2D))]
-    public class Set : MonoBehaviour {
+    public class MutableSet : MonoBehaviour {
         public delegate void ContentChangeEvent();
     
-        [SerializeField] private Text contentsText;
+        public Text contentsText;
     
         private Collider2D _collider;
 
@@ -32,7 +33,7 @@ namespace Puzzle {
             _collider = GetComponent<Collider2D>();
 #if UNITY_EDITOR
             if (!contentsText) {
-                Debug.LogWarning($"No contents text defined; set will not display its contents.", gameObject);
+                Debug.LogWarning("No contents text defined; set will not display its contents.", gameObject);
             }
 #endif
         }
@@ -54,13 +55,32 @@ namespace Puzzle {
             }
         }
 
+        private void OnTriggerExit2D(Collider2D other) {
+            _elements.Remove(other.gameObject);
+            OnContentsChanged();
+        }
+
         protected virtual void OnContentsChanged() {
             UpdateContentsText();
             ContentsChanged?.Invoke();
         }
 
         public override string ToString() {
-            return string.Join("\n", _elements.Select(x => x.name));
+            IEnumerable<string> Rec(GameObject go) {
+                var count = go.transform.childCount;
+                if (count == 0) {
+                    yield return go.name;
+                } else {
+                    for (var i = 0; i < count; i++) {
+                        var go2 = go.transform.GetChild(i).gameObject;
+                        foreach (var it in Rec(go2)) {
+                            yield return it;
+                        }
+                    }
+                }
+            }
+
+            return string.Join("\n", _elements.SelectMany(Rec));
         }
     }
 }

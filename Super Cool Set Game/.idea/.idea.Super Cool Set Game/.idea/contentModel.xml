@@ -8,8 +8,10 @@
           <e p="Extensions.cs" t="Include" />
           <e p="Puzzle" t="Include">
             <e p="Draggable.cs" t="Include" />
+            <e p="MutableSet.cs" t="Include" />
             <e p="OperationManager.cs" t="Include" />
-            <e p="Set.cs" t="Include" />
+            <e p="Puzzle.cs" t="Include" />
+            <e p="PuzzleLoader.cs" t="Include" />
           </e>
         </e>
       </e>
