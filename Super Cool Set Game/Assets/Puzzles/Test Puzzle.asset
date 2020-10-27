@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be012f4349a64d89a2144eacd6517370, type: 3}
+  m_Name: Test Puzzle
+  m_EditorClassIdentifier: 
+  elements:
+  - {fileID: 21300000, guid: 6dc2e6606be9367a19f30e90829fd6d2, type: 3}
+  - {fileID: 21300000, guid: f8087c59248256353bc20343c56974d7, type: 3}
+  - {fileID: 21300000, guid: 17e3f3d1cb46e5282893084a86e7c431, type: 3}
+  setElements:
+  - setData: []
+    elementData:
+    - {fileID: 21300000, guid: 04b320db82ed767b790fdbc6ca579336, type: 3}
+    - {fileID: 21300000, guid: 26fe0f5e8d3c8dcb483462474c248dc8, type: 3}
+    sprite: {fileID: 21300000, guid: 8f41db2378c540a0e98aa3cedd532ae5, type: 3}
+    textName: 
+  - setData: []
+    elementData:
+    - {fileID: 21300000, guid: f1c1043f9df247ba0b4193f0a0ba8844, type: 3}
+    - {fileID: 21300000, guid: 0c5381dafe933a14087c7da191c8a9f9, type: 3}
+    sprite: {fileID: 21300000, guid: 8f41db2378c540a0e98aa3cedd532ae5, type: 3}
+    textName: 
+  target:
+    setData: []
+    elementData:
+    - {fileID: 21300000, guid: 0c5381dafe933a14087c7da191c8a9f9, type: 3}
+    - {fileID: 21300000, guid: f1c1043f9df247ba0b4193f0a0ba8844, type: 3}
+    sprite: {fileID: 21300000, guid: 8f41db2378c540a0e98aa3cedd532ae5, type: 3}
+    textName: Pink Contents
+  fixedSets:
+  - setData: []
+    elementData: []
+    sprite: {fileID: 21300000, guid: 8f41db2378c540a0e98aa3cedd532ae5, type: 3}
+    textName: Blue Contents
