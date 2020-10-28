@@ -20,7 +20,6 @@
             <e p="PuzzleLoader.cs" t="Include" />
             <e p="Set.cs" t="Include" />
           </e>
-          <e p="Util.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">

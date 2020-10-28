@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -16,7 +15,6 @@ namespace Puzzle {
         public Transform elementsTray;
         public Transform holder;
 
-        // private MutableSet hoveredSet;
         private Vector3? offset;
 
         private void Awake() {

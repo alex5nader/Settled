@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Puzzle {
     public class PuzzleLoader : MonoBehaviour {
@@ -13,11 +12,9 @@ namespace Puzzle {
         [SerializeField] [InspectorName("World UI")] private CanvasGroup worldUi;
         
         [SerializeField] [InspectorName("Puzzle UI")] private CanvasGroup puzzleUi;
-
-        private int x;
         
         [SerializeField] private RectTransform dragHolder;
-        [FormerlySerializedAs("elements")] [SerializeField] private RectTransform elementsTray;
+        [SerializeField] private RectTransform elementsTray;
         [SerializeField] private RectTransform[] inputBySize;
         [SerializeField] private RectTransform output;
 #pragma warning restore 0649
