@@ -3,17 +3,15 @@ using System.Linq;
 
 namespace Puzzle {
     public class Set : BaseElement {
-        protected readonly List<BaseElement> Elements = new List<BaseElement>();
-
-        private void OnEnable() {
-            RecalculateElements();
-        }
+        protected readonly HashSet<BaseElement> Elements = new HashSet<BaseElement>();
         
         public void RecalculateElements() {
             Elements.Clear();
             
             foreach (var tr in transform.Children()) {
-                Elements.Add(tr.GetComponent<BaseElement>());
+                if (tr.GetComponent<BaseElement>() is BaseElement e) {
+                    Elements.Add(e);
+                }
             }
         }
 
@@ -22,7 +20,11 @@ namespace Puzzle {
                 return false;
             }
 
-            return Elements.SequenceEqual(otherSet.Elements);
+            return Elements.SetEquals(otherSet.Elements);
+        }
+
+        public override int GetHashCode() {
+            return Elements.GetHashCode();
         }
 
         protected override IEnumerable<BaseElement> Children() {

@@ -5,12 +5,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Puzzle {
-    [RequireComponent(typeof(RectTransform), typeof(BoxCollider2D), typeof(BaseElement))]
+    [RequireComponent(typeof(RectTransform), typeof(BaseElement))]
     public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
         private new RectTransform transform;
-        private new BoxCollider2D collider;
-
-        private Camera mainCamera;
 
         private BaseElement element;
 
@@ -23,10 +20,7 @@ namespace Puzzle {
         private Vector3? offset;
 
         private void Awake() {
-            mainCamera = Camera.main;
-
             transform = GetComponent<RectTransform>();
-            collider = GetComponent<BoxCollider2D>();
             element = GetComponent<BaseElement>();
         }
 
@@ -36,22 +30,6 @@ namespace Puzzle {
                 transform.position = new Vector3(pos.x, pos.y, transform.position.z);
             }
         }
-
-        // private void OnTriggerStay2D(Collider2D other) {
-        //     var inside = other.Contains(collider);
-        //     var alreadyTracked = hoveredSet != null && other.gameObject == hoveredSet.gameObject;
-        //     if (!alreadyTracked && inside) {
-        //         hoveredSet = other.GetComponent<MutableSet>();
-        //     } else if (alreadyTracked && !inside) {
-        //         hoveredSet = null;
-        //     }
-        // }
-        //
-        // private void OnTriggerExit2D(Collider2D other) {
-        //     if (hoveredSet && hoveredSet.gameObject == other.gameObject) {
-        //         hoveredSet = null;
-        //     }
-        // }
 
         public void OnPointerDown(PointerEventData eventData) {
             offset = Input.mousePosition - transform.position;
@@ -67,16 +45,14 @@ namespace Puzzle {
 
             var hoveredSet = list
                 .Select(res => res.gameObject.GetComponent<MutableSet>())
-                .First(s => s);
+                .FirstOrDefault(s => s);
 
             if (parentSet) {
                 parentSet.Remove(element, elementsTray);
             }
 
-            if (hoveredSet) {
-                Debug.Log($"adding to {hoveredSet.name}", hoveredSet);
+            if (hoveredSet != null) {
                 hoveredSet.Add(element);
-
                 parentSet = hoveredSet;
             } else {
                 transform.SetParent(elementsTray, true);

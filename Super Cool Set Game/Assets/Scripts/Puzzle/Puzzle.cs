@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -141,19 +140,21 @@ namespace Puzzle {
         
         public int FixedSetCount => fixedSets.Length;
 
-        public IEnumerable<IEnumerator> CreateFixedSets(Transform parent, float itemSize) {
+        public (IEnumerable<GameObject> sets, IEnumerable<IEnumerator> coros) CreateFixedSets(Transform parent, float itemSize) {
             var coros = new List<IEnumerator>();
+            var sets = new List<GameObject>();
             foreach (var s in fixedSets) {
-                var (_, setCoros) = MakeFixedSet(s, parent, itemSize, true);
+                var (set, setCoros) = MakeFixedSet(s, parent, itemSize, true);
+                sets.Add(set);
                 coros.AddRange(setCoros);
             }
-            return coros;
+            return (sets, coros);
         }
 
-        public IEnumerable<IEnumerator> CreateTargetSet(Transform parent, float itemSize) {
-            var (go, coros) = MakeFixedSet(target, parent, itemSize, false);
-            go.name = "target set";
-            return coros;
+        public (GameObject set, IEnumerable<IEnumerator> coros) CreateTargetSet(Transform parent, float itemSize) {
+            var (set, coros) = MakeFixedSet(target, parent, itemSize, false);
+            set.name = "target set";
+            return (set, coros);
         }
     }
 }

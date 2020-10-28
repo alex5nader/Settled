@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace Puzzle {
     public abstract class BaseElement : MonoBehaviour, IEquatable<BaseElement> {
