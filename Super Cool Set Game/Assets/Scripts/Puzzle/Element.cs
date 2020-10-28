@@ -20,10 +20,6 @@ namespace Puzzle {
             return value == otherElement.value;
         }
 
-        protected override IEnumerable<BaseElement> Children() {
-            yield break;
-        }
-
         // fields are effectively final and will not be mutated while in HashSet
         [SuppressMessage("ReSharper", "NonReadonlyMemberInGetHashCode")]
         public override int GetHashCode() {

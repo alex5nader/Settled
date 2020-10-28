@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Puzzle {
     public class PuzzleLoader : MonoBehaviour {
@@ -16,12 +17,11 @@ namespace Puzzle {
         private int x;
         
         [SerializeField] private RectTransform dragHolder;
-        [SerializeField] private RectTransform elements;
+        [FormerlySerializedAs("elements")] [SerializeField] private RectTransform elementsTray;
         [SerializeField] private RectTransform[] inputBySize;
         [SerializeField] private RectTransform output;
 #pragma warning restore 0649
 
-        private Set[] inputs;
         private Set target;
 
         private void Awake() {
@@ -58,24 +58,18 @@ namespace Puzzle {
         }
 
         private void CreatePuzzle() {
-            puzzle.CreateElements(elements, dragHolder, 50);
+            puzzle.CreateElements(elementsTray, dragHolder, 50);
 
-            inputs = new Set[puzzle.FixedSetCount];
             for (var i = 0; i < puzzle.FixedSetCount; i++) {
                 inputBySize[i].gameObject.SetActive(false);
             }
             var fixedSetParent = inputBySize[puzzle.FixedSetCount - 1];
             fixedSetParent.gameObject.SetActive(true);
 
-            {
-                var sets = puzzle.CreateFixedSets(fixedSetParent, 250);
-                var i = 0;
-                foreach (var go in sets) {
-                    var set = go.GetComponent<MutableSet>();
-                    inputs[i] = set;
-                    set.ContentsChanged += () => CheckComplete(set);
-                    i++;
-                }
+            var sets = puzzle.CreateFixedSets(fixedSetParent, 250, dragHolder, elementsTray);
+            foreach (var go in sets) {
+                var set = go.GetComponent<MutableSet>();
+                set.ContentsChanged += () => CheckComplete(set);
             }
 
             var newTarget = puzzle.CreateTargetSet(output, 250);
@@ -91,13 +85,9 @@ namespace Puzzle {
 
         #region Puzzle Exit
         private void CheckComplete(MutableSet changed) {
-            Debug.Log($"comparing {changed} to {target}");
             if (changed.Equals(target)) {
-                Debug.Log("correct!");
                 Time.timeScale = 1;
                 StartCoroutine(Fade(puzzleUi, fadeLength, false, DisablePuzzleUI));
-            } else {
-                Debug.Log("incorrect smh");
             }
         }
 
@@ -109,12 +99,11 @@ namespace Puzzle {
         }
         
         private void RemovePuzzle() {
-            inputs = null;
             foreach (var input in inputBySize) {
                 input.DestroyChildren();
             }
             
-            elements.DestroyChildren();
+            elementsTray.DestroyChildren();
             output.DestroyChildren();
             dragHolder.DestroyChildren();
         }

@@ -1,10 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace Puzzle {
-    public class Set : BaseElement, IPointerDownHandler {
+    public class Set : BaseElement {
         protected readonly HashSet<BaseElement> Elements = new HashSet<BaseElement>();
         
         public void RecalculateElements() {
@@ -19,7 +17,6 @@ namespace Puzzle {
 
         public override bool Equals(BaseElement other) {
             if (!(other is Set otherSet)) {
-                Debug.Log("not even a set smh", other);
                 return false;
             }
 
@@ -27,19 +24,14 @@ namespace Puzzle {
         }
 
         public override int GetHashCode() {
-            return Elements.GetHashCode();
-        }
-
-        protected override IEnumerable<BaseElement> Children() {
-            return Elements;
+            return Elements
+                .Select(b => b.GetHashCode())
+                .OrderBy(h => h)
+                .Aggregate(19, (hs, h) => hs * 31 + h);
         }
 
         public override string ToString() {
             return $"{{{string.Join(", ", Elements.Select(e => e.ToString()))}}}";
-        }
-
-        public void OnPointerDown(PointerEventData eventData) {
-            Debug.Log(this, this);
         }
     }
 }
