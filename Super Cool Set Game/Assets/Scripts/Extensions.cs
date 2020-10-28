@@ -2,6 +2,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public static class Extensions {
+    public static void DestroyChildren(this Transform tr) {
+        foreach (var child in tr.Children()) {
+            Object.Destroy(child.gameObject);
+        }
+    }
+    
     public static bool Contains(this Collider2D self, Collider2D other) {
         var selfBounds = self.bounds;
 
