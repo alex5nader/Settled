@@ -1,39 +1,34 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Puzzle {
     public class PuzzleLoader : MonoBehaviour {
-        [SerializeField]
-        private Puzzle puzzle;
-
-        [SerializeField] private GameObject worldRoot;
+#pragma warning disable 0649
+        [SerializeField] private Object.Puzzle puzzle;
         
         [SerializeField] private float fadeLength;
 
-        [SerializeField] private CanvasGroup worldGroup;
-        [SerializeField] private CanvasGroup puzzleGroup; 
+        [SerializeField] [InspectorName("World UI")] private CanvasGroup worldUi;
+        
+        [SerializeField] [InspectorName("Puzzle UI")] private CanvasGroup puzzleUi;
+
+        private int x;
         
         [SerializeField] private RectTransform dragHolder;
         [SerializeField] private RectTransform elements;
         [SerializeField] private RectTransform[] inputBySize;
         [SerializeField] private RectTransform output;
+#pragma warning restore 0649
 
         private Set[] inputs;
         private Set target;
 
         private void Awake() {
-            worldGroup.gameObject.SetActive(true);
-            worldGroup.alpha = 1;
-            puzzleGroup.gameObject.SetActive(false);
-            puzzleGroup.alpha = 0;
-        }
-
-        private void StartAll(IEnumerable<IEnumerator> coros) {
-            foreach (var coro in coros) {
-                StartCoroutine(coro);
-            }
+            worldUi.gameObject.SetActive(true);
+            worldUi.alpha = 1;
+            puzzleUi.gameObject.SetActive(false);
+            puzzleUi.alpha = 0;
         }
 
         private static IEnumerator Fade(CanvasGroup group, float length, bool fadeIn, Action after = null) {
@@ -54,16 +49,16 @@ namespace Puzzle {
 
         #region Puzzle Entrance
         public void BeginPuzzle() {
-            StartCoroutine(Fade(worldGroup, fadeLength, false, EnablePuzzleUI));
+            StartCoroutine(Fade(worldUi, fadeLength, false, EnablePuzzleUI));
         }
 
         private void EnablePuzzleUI() {
-            puzzleGroup.gameObject.SetActive(true);
+            puzzleUi.gameObject.SetActive(true);
             CreatePuzzle();
         }
 
         private void CreatePuzzle() {
-            StartAll(puzzle.CreateElements(elements, dragHolder, 50));
+            puzzle.CreateElements(elements, dragHolder, 50);
 
             inputs = new Set[puzzle.FixedSetCount];
             for (var i = 0; i < puzzle.FixedSetCount; i++) {
@@ -73,8 +68,7 @@ namespace Puzzle {
             fixedSetParent.gameObject.SetActive(true);
 
             {
-                var (sets, fixedCoros) = puzzle.CreateFixedSets(fixedSetParent, 250);
-                StartAll(fixedCoros);
+                var sets = puzzle.CreateFixedSets(fixedSetParent, 250);
                 var i = 0;
                 foreach (var go in sets) {
                     var set = go.GetComponent<MutableSet>();
@@ -84,12 +78,10 @@ namespace Puzzle {
                 }
             }
 
-            var (newTarget, targetCoros) = puzzle.CreateTargetSet(output, 250);
-            StartAll(targetCoros);
+            var newTarget = puzzle.CreateTargetSet(output, 250);
             target = newTarget.GetComponent<Set>();
-            target.RecalculateElements();
 
-            StartCoroutine(Fade(puzzleGroup, fadeLength, true, StopTime));
+            StartCoroutine(Fade(puzzleUi, fadeLength, true, StopTime));
         }
 
         private void StopTime() {
@@ -98,18 +90,21 @@ namespace Puzzle {
         #endregion Puzzle Entrance
 
         #region Puzzle Exit
-
         private void CheckComplete(MutableSet changed) {
+            Debug.Log($"comparing {changed} to {target}");
             if (changed.Equals(target)) {
+                Debug.Log("correct!");
                 Time.timeScale = 1;
-                StartCoroutine(Fade(puzzleGroup, fadeLength, false, DisablePuzzleUI));
+                StartCoroutine(Fade(puzzleUi, fadeLength, false, DisablePuzzleUI));
+            } else {
+                Debug.Log("incorrect smh");
             }
         }
 
         private void DisablePuzzleUI() {
-            puzzleGroup.gameObject.SetActive(false);
+            puzzleUi.gameObject.SetActive(false);
             
-            StartCoroutine(Fade(worldGroup, fadeLength, true));
+            StartCoroutine(Fade(worldUi, fadeLength, true));
             RemovePuzzle();
         }
         

@@ -26,20 +26,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a77b62a-aea2-482f-9e0e-3a6e63d74517" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements/Set.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements/Set/Difference.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements/Set/Difference.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements/Set/Intersection+Product.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements/Set/Intersection+Product.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements/Set/Test Target.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements/Set/Test Target.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements/Sprite.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements/Sprite/Difference.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements/Sprite/Difference.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements/Sprite/Intersection.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements/Sprite/Intersection.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements/Sprite/Product.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements/Sprite/Product.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements/Sprite/Union.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements/Sprite/Union.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/BaseElement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/BaseElement.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/SetElement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/SetElement.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/SpriteElement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/SpriteElement.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Puzzles/Test Puzzle.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Puzzles/Test Puzzle.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/UI.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/UI.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/BaseElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/BaseElement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Draggable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Draggable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Element.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Element.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/MutableSet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/MutableSet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/OperationManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/OperationManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Puzzle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Puzzle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Puzzle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/Puzzle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Puzzle.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/Puzzle.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,11 +126,19 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/IElement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Puzzle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Element.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/MutableSet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/BaseElement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Draggable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/BaseElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/Element.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/SetElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/SpriteElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Struct/Element.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Struct/FFI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Struct/Dummy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/Puzzle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs" />
       </list>
     </option>
@@ -164,7 +191,9 @@
       <workItem from="1603678746388" duration="2997000" />
       <workItem from="1603746647073" duration="10853000" />
       <workItem from="1603759596969" duration="12228000" />
-      <workItem from="1603824163121" duration="15664000" />
+      <workItem from="1603824163121" duration="18012000" />
+      <workItem from="1603852814573" duration="5444000" />
+      <workItem from="1603897544324" duration="970000" />
     </task>
     <task id="LOCAL-00001" summary="Ugly demo">
       <created>1603676626334</created>
@@ -263,17 +292,21 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2980" y="430" width="430" height="542" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603676283183" />
-    <state x="2875" y="275" width="649" height="855" key="find.popup" timestamp="1603825390843">
+    <state x="2875" y="275" width="649" height="855" key="find.popup" timestamp="1603898351253">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2875" y="275" width="649" height="855" key="find.popup/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603825390843" />
+    <state x="2875" y="275" width="649" height="855" key="find.popup/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603898351253" />
     <state x="2887" y="408" width="615" height="586" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603677167902">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2887" y="408" width="615" height="586" key="git4idea.branch.GitSmartOperationDialog/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603677167902" />
-    <state x="2863" y="320" width="672" height="678" key="search.everywhere.popup" timestamp="1603752588474">
+    <state x="2864" y="329" key="run.anything.popup" timestamp="1603897909191">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2863" y="320" width="672" height="678" key="search.everywhere.popup/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603752588474" />
+    <state x="2864" y="329" key="run.anything.popup/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603897909191" />
+    <state x="2863" y="320" width="672" height="678" key="search.everywhere.popup" timestamp="1603857826067">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2863" y="320" width="672" height="678" key="search.everywhere.popup/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603857826067" />
   </component>
 </project>
