@@ -1,26 +1,17 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public static class Extensions {
+    public static float Min(this Vector2 vec) {
+        return Math.Min(vec.x, vec.y);
+    }
+    
     public static void DestroyChildren(this Transform tr) {
         foreach (var child in tr.Children()) {
             Object.Destroy(child.gameObject);
         }
-    }
-    
-    public static bool Contains(this Collider2D self, Collider2D other) {
-        var selfBounds = self.bounds;
-
-        var selfMin = selfBounds.min.XY();
-        var selfMax = selfBounds.max.XY();
-        var otherCenter = other.bounds.center.XY();
-
-        bool Between(float t, float a, float b) {
-            return a <= t && t < b;
-        }
-
-        return Between(otherCenter.x, selfMin.x, selfMax.x)
-            && Between(otherCenter.y, selfMin.y, selfMax.y);
     }
 
     public static IEnumerable<Transform> Children(this Transform self) {
@@ -28,9 +19,5 @@ public static class Extensions {
         for (var i = 0; i < count; i++) {
             yield return self.GetChild(i);
         }
-    }
-
-    private static Vector2 XY(this Vector3 v) {
-        return new Vector2(v.x, v.y);
     }
 }

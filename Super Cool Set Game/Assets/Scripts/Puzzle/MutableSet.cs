@@ -1,7 +1,6 @@
 using UnityEngine;
 
 namespace Puzzle {
-    [RequireComponent(typeof(BoxCollider2D))]
     public sealed class MutableSet : Set {
         public void Add(BaseElement element) {
             element.transform.SetParent(transform, true);

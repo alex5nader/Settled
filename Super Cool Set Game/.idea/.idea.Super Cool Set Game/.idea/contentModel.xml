@@ -11,11 +11,15 @@
             <e p="Draggable.cs" t="Include" />
             <e p="Element.cs" t="Include" />
             <e p="MutableSet.cs" t="Include" />
-            <e p="Puzzle.cs" t="Include" />
+            <e p="Object" t="Include">
+              <e p="BaseElement.cs" t="Include" />
+              <e p="Puzzle.cs" t="Include" />
+              <e p="SetElement.cs" t="Include" />
+              <e p="SpriteElement.cs" t="Include" />
+            </e>
             <e p="PuzzleLoader.cs" t="Include" />
             <e p="Set.cs" t="Include" />
           </e>
-          <e p="Util.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">

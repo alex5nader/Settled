@@ -13,30 +13,12 @@ MonoBehaviour:
   m_Name: Test Puzzle
   m_EditorClassIdentifier: 
   elements:
-  - {fileID: 21300000, guid: f1c1043f9df247ba0b4193f0a0ba8844, type: 3}
-  - {fileID: 21300000, guid: 0c5381dafe933a14087c7da191c8a9f9, type: 3}
-  - {fileID: 21300000, guid: 17e3f3d1cb46e5282893084a86e7c431, type: 3}
-  setElements:
-  - setData: []
-    elementData:
-    - {fileID: 21300000, guid: 04b320db82ed767b790fdbc6ca579336, type: 3}
-    - {fileID: 21300000, guid: 26fe0f5e8d3c8dcb483462474c248dc8, type: 3}
-    sprite: {fileID: 21300000, guid: 8f41db2378c540a0e98aa3cedd532ae5, type: 3}
-  - setData: []
-    elementData:
-    - {fileID: 21300000, guid: f1c1043f9df247ba0b4193f0a0ba8844, type: 3}
-    - {fileID: 21300000, guid: 0c5381dafe933a14087c7da191c8a9f9, type: 3}
-    sprite: {fileID: 21300000, guid: 8f41db2378c540a0e98aa3cedd532ae5, type: 3}
-  target:
-    setData: []
-    elementData:
-    - {fileID: 21300000, guid: 0c5381dafe933a14087c7da191c8a9f9, type: 3}
-    - {fileID: 21300000, guid: f1c1043f9df247ba0b4193f0a0ba8844, type: 3}
-    sprite: {fileID: 21300000, guid: 8f41db2378c540a0e98aa3cedd532ae5, type: 3}
+  - {fileID: 11400000, guid: af3d7ea31331678a2bdfe5b2609c8c8c, type: 2}
+  - {fileID: 11400000, guid: 3ef93ef4e9c042f7a93e9d71f5a7a2e6, type: 2}
+  - {fileID: 11400000, guid: bcc4531e8c0bd4a7facdfbf8d26c39b7, type: 2}
   fixedSets:
-  - setData: []
-    elementData: []
-    sprite: {fileID: 21300000, guid: 8f41db2378c540a0e98aa3cedd532ae5, type: 3}
-  - setData: []
-    elementData: []
-    sprite: {fileID: 21300000, guid: 8f41db2378c540a0e98aa3cedd532ae5, type: 3}
+  - {fileID: 11400000, guid: 2fb6577908ca1faeab05ed8cc85996e1, type: 2}
+  - {fileID: 11400000, guid: 64b8cfdebfc017d73b0c590693cbfeb4, type: 2}
+  - {fileID: 11400000, guid: 64b8cfdebfc017d73b0c590693cbfeb4, type: 2}
+  - {fileID: 11400000, guid: 64b8cfdebfc017d73b0c590693cbfeb4, type: 2}
+  target: {fileID: 11400000, guid: b06a431928c9ee96dbf5b57f83270aa3, type: 2}

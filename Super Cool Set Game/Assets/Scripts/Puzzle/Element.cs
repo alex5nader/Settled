@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,10 +17,6 @@ namespace Puzzle {
             }
 
             return value == otherElement.value;
-        }
-
-        protected override IEnumerable<BaseElement> Children() {
-            yield break;
         }
 
         // fields are effectively final and will not be mutated while in HashSet

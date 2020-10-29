@@ -1,9 +1,39 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace Puzzle {
+    [RequireComponent(typeof(GridLayoutGroup))]
     public class Set : BaseElement {
+        private GridLayoutGroup grid;
+        
         protected readonly HashSet<BaseElement> Elements = new HashSet<BaseElement>();
+
+        private void Awake() {
+            grid = GetComponent<GridLayoutGroup>();
+
+            ResizeCells(transform.parent.GetComponent<GridLayoutGroup>().cellSize);
+
+            IEnumerator SetSizeNextFrame() {
+                yield return null;
+            
+                var draggable = GetComponent<Draggable>();
+                if (draggable) {
+                    draggable.Resize += ResizeCells;
+                }
+            }
+
+            StartCoroutine(SetSizeNextFrame());
+        }
+
+        private void ResizeCells(Vector2 parentCellSize) {
+            var size = parentCellSize.Min() / 3;
+            Debug.Log($"resizing cells to {size}x{size}", this);
+            grid.cellSize = new Vector2(size, size);
+        }
         
         public void RecalculateElements() {
             Elements.Clear();
@@ -24,11 +54,10 @@ namespace Puzzle {
         }
 
         public override int GetHashCode() {
-            return Elements.GetHashCode();
-        }
-
-        protected override IEnumerable<BaseElement> Children() {
-            return Elements;
+            return Elements
+                .Select(b => b.GetHashCode())
+                .OrderBy(h => h)
+                .Aggregate(19, (hs, h) => hs * 31 + h);
         }
 
         public override string ToString() {
