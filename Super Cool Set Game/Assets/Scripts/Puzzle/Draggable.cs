@@ -2,10 +2,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Puzzle {
     [RequireComponent(typeof(RectTransform), typeof(BaseElement))]
     public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
+        public delegate void ResizeEventHandler(Vector2 parentCellSize);
+
+        public event ResizeEventHandler Resize;
+        
         private new RectTransform transform;
 
         private BaseElement element;
@@ -30,9 +35,11 @@ namespace Puzzle {
         }
 
         public void OnPointerDown(PointerEventData eventData) {
-            offset = Input.mousePosition - transform.position;
+            var newCellSize = holder.GetComponent<GridLayoutGroup>().cellSize;
+            offset = (Input.mousePosition - transform.position) * newCellSize.Min() / transform.rect.size.Min();
 
             transform.SetParent(holder, true);
+            OnResize(newCellSize);
         }
 
         public void OnPointerUp(PointerEventData eventData) {
@@ -46,15 +53,24 @@ namespace Puzzle {
                 .FirstOrDefault(s => s);
 
             if (parentSet) {
-                parentSet.Remove(element, elementsTray);
+                parentSet.Remove(element, elementsTray.transform);
             }
 
             if (hoveredSet != null) {
                 hoveredSet.Add(element);
                 parentSet = hoveredSet;
+                
+                OnResize(parentSet.GetComponent<GridLayoutGroup>().cellSize);
             } else {
-                transform.SetParent(elementsTray, true);
+                transform.SetParent(elementsTray.transform, true);
+                parentSet = null;
+                
+                OnResize(elementsTray.GetComponent<GridLayoutGroup>().cellSize);
             }
+        }
+
+        protected virtual void OnResize(Vector2 parentCellSize) {
+            Resize?.Invoke(parentCellSize);
         }
     }
 }

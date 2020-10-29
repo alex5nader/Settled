@@ -10,7 +10,6 @@ namespace Puzzle {
         [SerializeField] private float fadeLength;
 
         [SerializeField] [InspectorName("World UI")] private CanvasGroup worldUi;
-        
         [SerializeField] [InspectorName("Puzzle UI")] private CanvasGroup puzzleUi;
         
         [SerializeField] private RectTransform dragHolder;
@@ -36,7 +35,7 @@ namespace Puzzle {
                 }
             } else {
                 for (var time = 0f; time < length; time += Time.unscaledDeltaTime) {
-                    group.alpha = (1 - time) / length;
+                    group.alpha = 1 - time/length;
                     yield return null;
                 }
             }
@@ -51,11 +50,12 @@ namespace Puzzle {
 
         private void EnablePuzzleUI() {
             puzzleUi.gameObject.SetActive(true);
+            worldUi.gameObject.SetActive(false);
             CreatePuzzle();
         }
 
         private void CreatePuzzle() {
-            puzzle.CreateElements(elementsTray, dragHolder, 50);
+            puzzle.CreateElements(elementsTray, dragHolder);
 
             for (var i = 0; i < puzzle.FixedSetCount; i++) {
                 inputBySize[i].gameObject.SetActive(false);
@@ -63,13 +63,13 @@ namespace Puzzle {
             var fixedSetParent = inputBySize[puzzle.FixedSetCount - 1];
             fixedSetParent.gameObject.SetActive(true);
 
-            var sets = puzzle.CreateFixedSets(fixedSetParent, 250, dragHolder, elementsTray);
+            var sets = puzzle.CreateFixedSets(fixedSetParent, dragHolder, elementsTray);
             foreach (var go in sets) {
                 var set = go.GetComponent<MutableSet>();
                 set.ContentsChanged += () => CheckComplete(set);
             }
 
-            var newTarget = puzzle.CreateTargetSet(output, 250);
+            var newTarget = puzzle.CreateTargetSet(output);
             target = newTarget.GetComponent<Set>();
 
             StartCoroutine(Fade(puzzleUi, fadeLength, true, StopTime));
@@ -91,6 +91,7 @@ namespace Puzzle {
         private void DisablePuzzleUI() {
             puzzleUi.gameObject.SetActive(false);
             
+            worldUi.gameObject.SetActive(true);
             StartCoroutine(Fade(worldUi, fadeLength, true));
             RemovePuzzle();
         }
