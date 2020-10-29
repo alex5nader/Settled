@@ -26,22 +26,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a77b62a-aea2-482f-9e0e-3a6e63d74517" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Animation.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements/Set/Emtpy.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements/Set/Emtpy.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Product.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Product.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Shaders.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Puzzles/Test Puzzle.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Puzzles/Test Puzzle.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/UI.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/UI.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Draggable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Draggable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/Puzzle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/Puzzle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="BRANCH" value="main" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -58,6 +58,7 @@
     <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/Draggable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A616560E-8B68-483F-8593-DD6DF05CAB38/03/7a9c09a4/BoxCollider2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Extensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/PuzzleLoader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/ef/c529f582/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/27/dab98540/Time.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/2b/3250e6b9/HashSet`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -66,6 +67,7 @@
     <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/Draggable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scenes/UI.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/c6/b875dd4a/IEquatable`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/PuzzleLoader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/f6/388ac686/Color.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/99258562-0D64-4271-98DD-F3A0E1467733/45/7580fbf1/020002E4.il" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/PuzzleLoader.cs" root0="SKIP_HIGHLIGHTING" />
@@ -136,9 +138,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/IDragFinished.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/Puzzle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Draggable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs" />
       </list>
     </option>
   </component>
@@ -192,7 +194,7 @@
       <workItem from="1603759596969" duration="12228000" />
       <workItem from="1603824163121" duration="18012000" />
       <workItem from="1603852814573" duration="5444000" />
-      <workItem from="1603897544324" duration="11936000" />
+      <workItem from="1603897544324" duration="15069000" />
     </task>
     <task id="LOCAL-00001" summary="Ugly demo">
       <created>1603676626334</created>
@@ -250,7 +252,21 @@
       <option name="project" value="LOCAL" />
       <updated>1603902315295</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Push for meeting">
+      <created>1603936271919</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1603936271919</updated>
+    </task>
+    <task id="LOCAL-00010" summary="go away workspace.xml">
+      <created>1603936283205</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1603936283205</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +309,8 @@
     <MESSAGE value="Fix hash code impl for nested sets" />
     <MESSAGE value="Clean up code" />
     <MESSAGE value="Push for meeting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Push for meeting" />
+    <MESSAGE value="go away workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="go away workspace.xml" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2919" y="506" width="614" height="391" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603683550169">
@@ -320,10 +337,10 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2020" y="100" width="2360" height="1205" key="VCS.FileHistoryDialog/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603827854464" />
-    <state x="2795" y="438" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1603934299091">
+    <state x="2795" y="438" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1603936306798">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2795" y="438" width="800" height="526" key="Vcs.Push.Dialog.v2/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603934299091" />
+    <state x="2795" y="438" width="800" height="526" key="Vcs.Push.Dialog.v2/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603936306798" />
     <state x="2980" y="430" width="430" height="542" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1603676283183">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
