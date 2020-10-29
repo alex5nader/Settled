@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Puzzle {
     public class PuzzleLoader : MonoBehaviour {
@@ -9,12 +10,13 @@ namespace Puzzle {
         
         [SerializeField] private float fadeLength;
 
-        [SerializeField] [InspectorName("World UI")] private CanvasGroup worldUi;
-        [SerializeField] [InspectorName("Puzzle UI")] private CanvasGroup puzzleUi;
+        [SerializeField] private CanvasGroup worldUi;
+        [SerializeField] private CanvasGroup puzzleUi;
         
         [SerializeField] private RectTransform dragHolder;
         [SerializeField] private RectTransform elementsTray;
-        [SerializeField] private RectTransform[] inputBySize;
+        [SerializeField] private GridLayoutGroup input;
+        [SerializeField] private GridLayoutGroup[] inputGridByCount;
         [SerializeField] private RectTransform output;
 #pragma warning restore 0649
 
@@ -33,11 +35,13 @@ namespace Puzzle {
                     group.alpha = time / length;
                     yield return null;
                 }
+                group.alpha = 1;
             } else {
                 for (var time = 0f; time < length; time += Time.unscaledDeltaTime) {
                     group.alpha = 1 - time/length;
                     yield return null;
                 }
+                group.alpha = 0;
             }
 
             after?.Invoke();
@@ -54,16 +58,22 @@ namespace Puzzle {
             CreatePuzzle();
         }
 
+        private int tempCount = -1;
+        public void RemoveFixedSet() {
+            if (tempCount == -1) {
+                tempCount = puzzle.FixedSetCount;
+            }
+            input.cellSize = inputGridByCount[tempCount - 2].cellSize;
+            Destroy(input.transform.GetChild(tempCount - 1).gameObject);
+            tempCount--;
+        }
+
         private void CreatePuzzle() {
             puzzle.CreateElements(elementsTray, dragHolder);
 
-            for (var i = 0; i < puzzle.FixedSetCount; i++) {
-                inputBySize[i].gameObject.SetActive(false);
-            }
-            var fixedSetParent = inputBySize[puzzle.FixedSetCount - 1];
-            fixedSetParent.gameObject.SetActive(true);
+            input.cellSize = inputGridByCount[puzzle.FixedSetCount - 1].cellSize;
 
-            var sets = puzzle.CreateFixedSets(fixedSetParent, dragHolder, elementsTray);
+            var sets = puzzle.CreateFixedSets(input.transform, dragHolder, elementsTray);
             foreach (var go in sets) {
                 var set = go.GetComponent<MutableSet>();
                 set.ContentsChanged += () => CheckComplete(set);
@@ -97,9 +107,7 @@ namespace Puzzle {
         }
         
         private void RemovePuzzle() {
-            foreach (var input in inputBySize) {
-                input.DestroyChildren();
-            }
+            input.transform.DestroyChildren();
             
             elementsTray.DestroyChildren();
             output.DestroyChildren();

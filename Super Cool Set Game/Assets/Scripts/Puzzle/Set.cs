@@ -31,7 +31,6 @@ namespace Puzzle {
 
         private void ResizeCells(Vector2 parentCellSize) {
             var size = parentCellSize.Min() / 3;
-            Debug.Log($"resizing cells to {size}x{size}", this);
             grid.cellSize = new Vector2(size, size);
         }
         
