@@ -26,14 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a77b62a-aea2-482f-9e0e-3a6e63d74517" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Fonts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Product.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Product.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/UI.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/UI.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,8 +132,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/Puzzle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Draggable.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" />
       </list>
     </option>
   </component>
@@ -194,7 +187,7 @@
       <workItem from="1603759596969" duration="12228000" />
       <workItem from="1603824163121" duration="18012000" />
       <workItem from="1603852814573" duration="5444000" />
-      <workItem from="1603897544324" duration="15069000" />
+      <workItem from="1603897544324" duration="15393000" />
     </task>
     <task id="LOCAL-00001" summary="Ugly demo">
       <created>1603676626334</created>
@@ -266,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603936283205</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="oops, no prefabs">
+      <created>1603940306811</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1603940306811</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,7 +310,8 @@
     <MESSAGE value="Clean up code" />
     <MESSAGE value="Push for meeting" />
     <MESSAGE value="go away workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="go away workspace.xml" />
+    <MESSAGE value="oops, no prefabs" />
+    <option name="LAST_COMMIT_MESSAGE" value="oops, no prefabs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2919" y="506" width="614" height="391" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603683550169">
@@ -345,10 +346,10 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2980" y="430" width="430" height="542" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603676283183" />
-    <state x="2875" y="275" width="649" height="855" key="find.popup" timestamp="1603935355819">
+    <state x="2875" y="275" width="649" height="855" key="find.popup" timestamp="1603940552137">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2875" y="275" width="649" height="855" key="find.popup/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603935355819" />
+    <state x="2875" y="275" width="649" height="855" key="find.popup/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603940552137" />
     <state x="2887" y="408" width="615" height="586" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603677167902">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
