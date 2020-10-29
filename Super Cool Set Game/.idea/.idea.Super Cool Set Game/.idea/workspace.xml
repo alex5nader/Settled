@@ -25,39 +25,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a77b62a-aea2-482f-9e0e-3a6e63d74517" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/dictionaries/noobstar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/Action.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/Action.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/ActionStack.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/ActionStack.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/RingStack.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/RingStack.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation/Operation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation/Operation.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation/Union.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation/Union.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/UI.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/UI.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Movement/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Draggable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Draggable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/MutableSet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/MutableSet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/BaseElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/BaseElement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/BaseElement.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/BaseElement.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/Puzzle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/Puzzle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/Puzzle.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/Puzzle.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/SetElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/SetElement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/SetElement.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/SetElement.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/SpriteElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/SpriteElement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/SpriteElement.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/SpriteElement.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" afterDir="false" />
-    </list>
+    <list default="true" id="4a77b62a-aea2-482f-9e0e-3a6e63d74517" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,6 +51,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A616560E-8B68-483F-8593-DD6DF05CAB38/03/7a9c09a4/BoxCollider2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file:///opt/Unity/2019.4.13f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventData/PointerEventData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/ef/c529f582/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/Draggable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A42A0DB-0BFD-4389-9489-41F1DD09A11A/55/16440ee0/Bounds.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A07CF8C1-D55F-4294-BE89-9CB43B1AE07E/d0/a673c73f/IPointerDownHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file:///opt/Unity/2019.4.13f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
@@ -148,7 +117,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/SetElement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/MutableSet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/BaseElement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/Action.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/Puzzle.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.cs" />
@@ -161,6 +129,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation/Union.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation/Operation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" />
       </list>
     </option>
   </component>
@@ -219,7 +188,7 @@
       <workItem from="1603852814573" duration="5444000" />
       <workItem from="1603897544324" duration="16205000" />
       <workItem from="1603990177887" duration="600000" />
-      <workItem from="1603992187469" duration="13386000" />
+      <workItem from="1603992187469" duration="13778000" />
     </task>
     <task id="LOCAL-00001" summary="Ugly demo">
       <created>1603676626334</created>
@@ -305,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603940701322</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Implement undo/redo + start operation impl">
+      <created>1604011664095</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1604011664096</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +327,8 @@
     <MESSAGE value="go away workspace.xml" />
     <MESSAGE value="oops, no prefabs" />
     <MESSAGE value="shut up console" />
-    <option name="LAST_COMMIT_MESSAGE" value="shut up console" />
+    <MESSAGE value="Implement undo/redo + start operation impl" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement undo/redo + start operation impl" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2946" y="534" width="498" height="335" key="#Notifications" timestamp="1604000083242">
@@ -414,9 +391,9 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2864" y="329" key="run.anything.popup/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603997413159" />
-    <state x="2863" y="320" width="672" height="678" key="search.everywhere.popup" timestamp="1603857826067">
+    <state x="2863" y="320" width="672" height="678" key="search.everywhere.popup" timestamp="1604011433363">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2863" y="320" width="672" height="678" key="search.everywhere.popup/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603857826067" />
+    <state x="2863" y="320" width="672" height="678" key="search.everywhere.popup/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1604011433363" />
   </component>
 </project>
