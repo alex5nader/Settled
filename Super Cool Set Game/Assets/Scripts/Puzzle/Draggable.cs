@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Puzzle.Actions;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -9,14 +10,15 @@ namespace Puzzle {
     public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
         public delegate void ResizeEventHandler(Vector2 parentCellSize);
 
-        public event ResizeEventHandler Resize;
+        public event ResizeEventHandler SizeChanged;
         
         private new RectTransform transform;
 
         private BaseElement element;
 
-        private MutableSet parentSet;
+        public MutableSet ParentSet { private get; set; }
 
+        public ActionStack actionStack;
         public Transform elementsTray;
         public Transform holder;
 
@@ -39,7 +41,7 @@ namespace Puzzle {
             offset = (Input.mousePosition - transform.position) * newCellSize.Min() / transform.rect.size.Min();
 
             transform.SetParent(holder, true);
-            OnResize(newCellSize);
+            TriggerResize(newCellSize);
         }
 
         public void OnPointerUp(PointerEventData eventData) {
@@ -52,25 +54,37 @@ namespace Puzzle {
                 .Select(res => res.gameObject.GetComponent<MutableSet>())
                 .FirstOrDefault(s => s);
 
-            if (parentSet) {
-                parentSet.Remove(element, elementsTray.transform);
-            }
+            var hoveringOverSet = (bool) hoveredSet;
+            var inTray = !ParentSet;
 
+            if (inTray && hoveringOverSet) {
+                actionStack.PerformAction(new AddElement(this, element, elementsTray, hoveredSet));
+            } else if (!inTray && hoveringOverSet) {
+                actionStack.PerformAction(new MoveElement(this, element, ParentSet, hoveredSet));
+            } else if (!inTray /* && !hoveringOverSet */) {
+                actionStack.PerformAction(new RemoveElement(this, element, ParentSet, elementsTray));
+            } /* else if (inTray && !hoveringOverSet) */ // nothing should be done
+
+            if (ParentSet) {
+                ParentSet.Remove(element, elementsTray.transform);
+            }
+            
             if (hoveredSet != null) {
                 hoveredSet.Add(element);
-                parentSet = hoveredSet;
+                ParentSet = hoveredSet;
                 
-                OnResize(parentSet.GetComponent<GridLayoutGroup>().cellSize);
+                TriggerResize(ParentSet.GetComponent<GridLayoutGroup>().cellSize);
             } else {
-                transform.SetParent(elementsTray.transform, true);
-                parentSet = null;
                 
-                OnResize(elementsTray.GetComponent<GridLayoutGroup>().cellSize);
+                transform.SetParent(elementsTray.transform, true);
+                ParentSet = null;
+                
+                TriggerResize(elementsTray.GetComponent<GridLayoutGroup>().cellSize);
             }
         }
 
-        protected virtual void OnResize(Vector2 parentCellSize) {
-            Resize?.Invoke(parentCellSize);
+        public virtual void TriggerResize(Vector2 parentCellSize) {
+            SizeChanged?.Invoke(parentCellSize);
         }
     }
 }

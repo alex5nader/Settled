@@ -1,17 +1,22 @@
 using System;
 using System.Collections;
+using Puzzle.Actions;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Puzzle {
+    [RequireComponent(typeof(ActionStack))]
     public class PuzzleLoader : MonoBehaviour {
 #pragma warning disable 0649
-        [SerializeField] private Object.Puzzle puzzle;
+        [SerializeField] private Scriptable.Puzzle puzzle;
         
         [SerializeField] private float fadeLength;
 
         [SerializeField] private CanvasGroup worldUi;
         [SerializeField] private CanvasGroup puzzleUi;
+
+        [SerializeField] private Button undoButton;
+        [SerializeField] private Button redoButton;
         
         [SerializeField] private RectTransform dragHolder;
         [SerializeField] private RectTransform elementsTray;
@@ -19,10 +24,14 @@ namespace Puzzle {
         [SerializeField] private GridLayoutGroup[] inputGridByCount;
         [SerializeField] private RectTransform output;
 #pragma warning restore 0649
+        
+        public ActionStack ActionStack { get; private set; }
 
         private Set target;
 
         private void Awake() {
+            ActionStack = GetComponent<ActionStack>();
+            
             worldUi.gameObject.SetActive(true);
             worldUi.alpha = 1;
             puzzleUi.gameObject.SetActive(false);
@@ -69,17 +78,22 @@ namespace Puzzle {
         }
 
         private void CreatePuzzle() {
-            puzzle.CreateElements(elementsTray, dragHolder);
+            ActionStack.Clear();
+            
+            undoButton.interactable = false;
+            redoButton.interactable = false;
+            
+            puzzle.CreateElements(elementsTray, dragHolder, ActionStack);
 
             input.cellSize = inputGridByCount[puzzle.FixedSetCount - 1].cellSize;
 
-            var sets = puzzle.CreateFixedSets(input.transform, dragHolder, elementsTray);
+            var sets = puzzle.CreateFixedSets(input.transform, dragHolder, elementsTray, ActionStack);
             foreach (var go in sets) {
                 var set = go.GetComponent<MutableSet>();
                 set.ContentsChanged += () => CheckComplete(set);
             }
 
-            var newTarget = puzzle.CreateTargetSet(output);
+            var newTarget = puzzle.CreateTargetSet(output, ActionStack);
             target = newTarget.GetComponent<Set>();
 
             StartCoroutine(Fade(puzzleUi, fadeLength, true, StopTime));

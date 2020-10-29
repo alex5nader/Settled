@@ -10,17 +10,26 @@
             <e p="PlayerMovement.cs" t="Include" />
           </e>
           <e p="Puzzle" t="Include">
+            <e p="Actions" t="Include">
+              <e p="Action.cs" t="Include" />
+              <e p="ActionStack.cs" t="Include" />
+              <e p="RingStack.cs" t="Include" />
+            </e>
             <e p="BaseElement.cs" t="Include" />
             <e p="Draggable.cs" t="Include" />
             <e p="Element.cs" t="Include" />
             <e p="MutableSet.cs" t="Include" />
-            <e p="Object" t="Include">
+            <e p="Operation" t="Include">
+              <e p="Operation.cs" t="Include" />
+              <e p="Union.cs" t="Include" />
+            </e>
+            <e p="PuzzleLoader.cs" t="Include" />
+            <e p="Scriptable" t="Include">
               <e p="BaseElement.cs" t="Include" />
               <e p="Puzzle.cs" t="Include" />
               <e p="SetElement.cs" t="Include" />
               <e p="SpriteElement.cs" t="Include" />
             </e>
-            <e p="PuzzleLoader.cs" t="Include" />
             <e p="Set.cs" t="Include" />
           </e>
         </e>
