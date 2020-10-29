@@ -30,6 +30,7 @@
       <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements/Set/Emtpy.asset" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Puzzles/Elements/Set/Emtpy.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Puzzles/Test Puzzle.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Puzzles/Test Puzzle.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/UI.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/UI.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Draggable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Draggable.cs" afterDir="false" />
@@ -76,11 +77,13 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/95/3cb76b31/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/PuzzleLoader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file:///opt/Unity/2019.4.13f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventData/PointerEventData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/PuzzleLoader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/Draggable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/BaseElement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/Object/Puzzle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A42A0DB-0BFD-4389-9489-41F1DD09A11A/55/16440ee0/Bounds.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A07CF8C1-D55F-4294-BE89-9CB43B1AE07E/d0/a673c73f/IPointerDownHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/Object/Puzzle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A42A0DB-0BFD-4389-9489-41F1DD09A11A/8b/50a0a900/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/5A42A0DB-0BFD-4389-9489-41F1DD09A11A/97/263b5699/020000CD.il" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A616560E-8B68-483F-8593-DD6DF05CAB38/cf/ee1a1b33/Physics2D.cs" root0="SKIP_HIGHLIGHTING" />
@@ -98,6 +101,7 @@
     <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Extensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/ef/c25b41f0/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A42A0DB-0BFD-4389-9489-41F1DD09A11A/f3/2b6b8172/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/Draggable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/53/95a50933/Random.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A42A0DB-0BFD-4389-9489-41F1DD09A11A/d5/3336e3f1/Object.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -188,7 +192,7 @@
       <workItem from="1603759596969" duration="12228000" />
       <workItem from="1603824163121" duration="18012000" />
       <workItem from="1603852814573" duration="5444000" />
-      <workItem from="1603897544324" duration="11326000" />
+      <workItem from="1603897544324" duration="11936000" />
     </task>
     <task id="LOCAL-00001" summary="Ugly demo">
       <created>1603676626334</created>
@@ -288,7 +292,8 @@
     <MESSAGE value="Remove unused extension" />
     <MESSAGE value="Fix hash code impl for nested sets" />
     <MESSAGE value="Clean up code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clean up code" />
+    <MESSAGE value="Push for meeting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Push for meeting" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2919" y="506" width="614" height="391" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603683550169">
