@@ -69,6 +69,20 @@ namespace Puzzle.Operation {
                 }));
             }
         }
+
+        public void StartDifference() {
+            var oldOperation = operation;
+            if (coro != null) {
+                CancelOperation();
+            }
+            if (oldOperation != Operation.Difference) {
+                StartOperation(Operation.Difference);
+                coro = StartCoroutine(SelectSets(2, sets => {
+                    actionStack.PerformAction(new SubtractSets(puzzleLoader, sets[0], sets[1], actionStack));
+                    FinishOperation();
+                }));
+            }
+        }
         
         private static IEnumerator SelectSets(int count, Action<MutableSet[]> withSets) {
             var sets = new MutableSet[count];
