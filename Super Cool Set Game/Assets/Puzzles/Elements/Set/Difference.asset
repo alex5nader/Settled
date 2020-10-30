@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b5a5fbc9f14168a8e49a9503d92a41, type: 3}
   m_Name: Difference
   m_EditorClassIdentifier: 
-  backgroundSprite: {fileID: 21300000, guid: 8f41db2378c540a0e98aa3cedd532ae5, type: 3}
+  backgroundSprite: {fileID: 21300000, guid: 1d1b20f9b001c904f918036067ead2f3, type: 3}
   elements:
   - {fileID: 11400000, guid: 1c7fe55b06c6cc7ecb3bbbd4feb14bbc, type: 2}
