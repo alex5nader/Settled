@@ -10,6 +10,10 @@ namespace Puzzle {
 
         public void Remove(BaseElement element, Transform newParent) {
             element.transform.SetParent(newParent, true);
+            Remove(element);
+        }
+
+        public void Remove(BaseElement element) {
             Elements.Remove(element);
             OnContentsChanged();
         }
@@ -20,6 +24,12 @@ namespace Puzzle {
 
         private void OnContentsChanged() {
             ContentsChanged?.Invoke();
+        }
+
+        public void AddUnionTo(GameObject target, MutableSet other) {
+            var union = target.AddComponent<MutableSet>();
+            union.Elements.UnionWith(Elements);
+            union.Elements.UnionWith(other.Elements);
         }
     }
 }

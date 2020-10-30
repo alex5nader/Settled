@@ -1,5 +1,5 @@
 using UnityEngine;
 
-namespace Puzzle.Object {
+namespace Puzzle.Scriptable {
     public class BaseElement : ScriptableObject { }
 }

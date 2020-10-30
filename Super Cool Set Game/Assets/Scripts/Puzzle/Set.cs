@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Puzzle.Scriptable;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,8 @@ namespace Puzzle {
     [RequireComponent(typeof(GridLayoutGroup))]
     public class Set : BaseElement {
         private GridLayoutGroup grid;
+
+        public SetElement scriptableObject;
         
         protected readonly HashSet<BaseElement> Elements = new HashSet<BaseElement>();
 
@@ -22,7 +25,7 @@ namespace Puzzle {
             
                 var draggable = GetComponent<Draggable>();
                 if (draggable) {
-                    draggable.Resize += ResizeCells;
+                    draggable.SizeChanged += ResizeCells;
                 }
             }
 

@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
+using Puzzle.Actions;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-namespace Puzzle.Object {
+namespace Puzzle.Scriptable {
     [CreateAssetMenu(fileName = "Puzzle", menuName = "Puzzle", order = 0)]
     public class Puzzle : ScriptableObject {
-
 #pragma warning disable 0649
         [SerializeField] private BaseElement[] elements;
         [SerializeField] private SetElement[] fixedSets;
@@ -31,20 +31,20 @@ namespace Puzzle.Object {
             return go;
         }
 
-        private static GameObject MakeFloatingElement(
-            Sprite sprite,
+        private static GameObject MakeFloatingElement(Sprite sprite,
             Transform parent,
             Transform dragHolder,
-            Transform elementsTray
-        ) {
+            Transform elementsTray, ActionStack actionStack) {
             var go = MakeFixedElement(sprite, parent);
             var drag = go.AddComponent<Draggable>();
             drag.holder = dragHolder;
             drag.elementsTray = elementsTray;
+            drag.actionStack = actionStack;
             return go;
         }
 
-        private static GameObject MakeFixedSet(SetElement data, Transform parent, bool mutable, [CanBeNull] Transform dragHolder, [CanBeNull] Transform elementsTray) {
+        private static GameObject MakeFixedSet(SetElement data, Transform parent, bool mutable,
+            [CanBeNull] Transform dragHolder, [CanBeNull] Transform elementsTray, ActionStack actionStack) {
             var go = new GameObject("fixed set", typeof(RectTransform));
 
             go.transform.SetParent(parent, false);
@@ -63,12 +63,14 @@ namespace Puzzle.Object {
                 foreach (var child in data.elements) {
                     switch (child) {
                     case SpriteElement element: {
-                        var elementGo = mutable ? MakeFloatingElement(element.sprite, tr, dragHolder, elementsTray) : MakeFixedElement(element.sprite, tr);
+                        var elementGo = mutable
+                            ? MakeFloatingElement(element.sprite, tr, dragHolder, elementsTray, actionStack)
+                            : MakeFixedElement(element.sprite, tr);
                         elementGo.transform.SetParent(tr, false);
                         break;
                     }
                     case SetElement childSet:
-                        var childGo = MakeFixedSet(childSet, tr, false, null, null);
+                        var childGo = MakeFixedSet(childSet, tr, false, null, null, actionStack);
                         childGo.transform.SetParent(tr, false);
                         break;
                     }
@@ -80,13 +82,11 @@ namespace Puzzle.Object {
             return go;
         }
 
-        private static void MakeFloatingSet(
-            SetElement data, 
-            Transform parent, 
+        private static void MakeFloatingSet(SetElement data,
+            Transform parent,
             Transform dragHolder,
-            Transform elementsTray
-        ) {
-            var go = MakeFixedSet(data, parent, false, dragHolder, elementsTray);
+            Transform elementsTray, ActionStack actionStack) {
+            var go = MakeFixedSet(data, parent, false, dragHolder, elementsTray, actionStack);
 
             go.name = "floating set";
 
@@ -95,19 +95,20 @@ namespace Puzzle.Object {
             var drag = go.AddComponent<Draggable>();
             drag.holder = dragHolder;
             drag.elementsTray = elementsTray;
+            drag.actionStack = actionStack;
 
             go.GetComponent<Image>().color = new Color(Random.value, Random.value, Random.value);
         }
 
-        public void CreateElements(Transform elementsTray, Transform dragHolder) {
+        public void CreateElements(Transform elementsTray, Transform dragHolder, ActionStack actionStack) {
             foreach (var e in elements) {
                 switch (e) {
                 case SpriteElement el: {
-                    MakeFloatingElement(el.sprite, elementsTray, dragHolder, elementsTray);
+                    MakeFloatingElement(el.sprite, elementsTray, dragHolder, elementsTray, actionStack);
                     break;
                 }
                 case SetElement set: {
-                    MakeFloatingSet(set, elementsTray, dragHolder, elementsTray);
+                    MakeFloatingSet(set, elementsTray, dragHolder, elementsTray, actionStack);
                     break;
                 }
                 }
@@ -116,11 +117,12 @@ namespace Puzzle.Object {
 
         public int FixedSetCount => fixedSets.Length;
 
-        public IEnumerable<GameObject> CreateFixedSets(Transform parent, Transform dragHolder, Transform elementsTray) =>
-            fixedSets.Select(s => MakeFixedSet(s, parent, true, dragHolder, elementsTray)).ToList();
+        public IEnumerable<GameObject> CreateFixedSets(Transform parent, Transform dragHolder, Transform elementsTray,
+            ActionStack actionStack) =>
+            fixedSets.Select(s => MakeFixedSet(s, parent, true, dragHolder, elementsTray, actionStack)).ToList();
 
-        public GameObject CreateTargetSet(Transform parent) {
-            var set = MakeFixedSet(target, parent, false, null, null);
+        public GameObject CreateTargetSet(Transform parent, ActionStack actionStack) {
+            var set = MakeFixedSet(target, parent, false, null, null, actionStack);
             set.name = "target set";
             return set;
         }
