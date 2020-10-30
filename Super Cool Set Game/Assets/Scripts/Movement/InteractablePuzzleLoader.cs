@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractablePuzzleLoader : InteractableObject
 {
-    [SerializeField] private Puzzle.Object.Puzzle puzzle;
+    [SerializeField] private Puzzle.Scriptable.Puzzle puzzle;
 
     public override void Execute()
     {
