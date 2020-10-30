@@ -71,7 +71,7 @@ namespace Puzzle {
         /// Begins a puzzle with the specified puzzle object.
         /// </summary>
         /// <param name="puzzleToLoad">The puzzle to load.</param>
-        public void BeginPuzzle(Object.Puzzle puzzleToLoad)
+        public void BeginPuzzle(Puzzle.Scriptable.Puzzle puzzleToLoad)
         {
             puzzle = puzzleToLoad;
             BeginPuzzle();
