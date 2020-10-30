@@ -64,7 +64,9 @@ namespace Puzzle.Scriptable {
             var pos = tr.position;
             tr.position = new Vector3(pos.x, pos.y, pos.z + 1);
 
-            go.AddComponent<Image>().sprite = data.backgroundSprite;
+            var image = go.AddComponent<Image>();
+            image.sprite = data.backgroundSprite;
+            image.type = Image.Type.Sliced;
 
             var grid = go.AddComponent<GridLayoutGroup>();
             grid.childAlignment = TextAnchor.MiddleCenter;
