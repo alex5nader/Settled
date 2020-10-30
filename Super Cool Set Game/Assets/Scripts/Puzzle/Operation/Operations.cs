@@ -83,6 +83,21 @@ namespace Puzzle.Operation {
                 }));
             }
         }
+
+        public void StartPowerset() {
+            var oldOperation = operation;
+            if (coro != null) {
+                CancelOperation();
+            }
+
+            if (oldOperation != Operation.Powerset) {
+                StartOperation(Operation.Powerset);
+                coro = StartCoroutine(SelectSets(1, sets => {
+                    actionStack.PerformAction(new MakePowerset(puzzleLoader, sets[0], actionStack));
+                    FinishOperation();
+                }));
+            }
+        }
         
         private static IEnumerator SelectSets(int count, Action<MutableSet[]> withSets) {
             var sets = new MutableSet[count];
@@ -99,7 +114,6 @@ namespace Puzzle.Operation {
 
                         // ReSharper disable once PossibleNullReferenceException
                         if (!hoveredSet.IsNull()) {
-                            Debug.Log($"clicked on {hoveredSet.name}", hoveredSet);
                             sets[i] = hoveredSet;
                         }
                     }

@@ -251,4 +251,68 @@ namespace Puzzle.Actions {
             bGo.SetActive(true);
         }
     }
+
+    public readonly struct MakePowerset : IAction {
+        private readonly GridLayoutGroup input;
+
+        private readonly GameObject orig;
+        private readonly GameObject powerset;
+
+        private readonly Vector2 oldCellSize;
+        private readonly Vector2 newCellSize;
+
+        // ReSharper disable twice SuggestBaseTypeForParameter
+        public MakePowerset(PuzzleLoader puzzleLoader, MutableSet original, ActionStack actionStack) {
+            input = puzzleLoader.input;
+            var inputTr = input.transform;
+
+            orig = original.gameObject;
+
+            var count = inputTr.ActiveChildCount();
+            oldCellSize = puzzleLoader.inputGrids[count-1].cellSize;
+            newCellSize = puzzleLoader.inputGrids[count-2].cellSize;
+
+            var background = ((SetElement) original.Scriptable).backgroundSprite;
+
+            var elements = original.ToList();
+
+            var subsets = new List<Scriptable.BaseElement>();
+
+            for (var i = (1 << original.Count) - 1; i >= 0; i--) {
+                var subset = new List<Scriptable.BaseElement>();
+
+                for (var j = 0; j < original.Count; j++) {
+                    if ((i & (1 << j)) != 0) {
+                        subset.Add(elements[j].Scriptable);
+                    }
+                }
+
+                var scriptable = ScriptableObject.CreateInstance<SetElement>();
+                scriptable.backgroundSprite = background;
+                scriptable.elements = subset;
+                
+                subsets.Add(scriptable);
+            }
+
+            var powersetScriptable = ScriptableObject.CreateInstance<SetElement>();
+            powersetScriptable.backgroundSprite = background;
+            powersetScriptable.elements = subsets;
+
+            powerset = Scriptable.Puzzle.MakeFixedSet(powersetScriptable, inputTr, true, puzzleLoader.dragHolder, puzzleLoader.elementsTray, actionStack);
+            
+            puzzleLoader.SubscribeToChanges(powerset.GetComponent<MutableSet>());
+        }
+    
+        public void Perform() {
+            input.cellSize = newCellSize;
+            powerset.SetActive(true);
+            orig.SetActive(false);
+        }
+    
+        public void Undo() {
+            input.cellSize = oldCellSize;
+            powerset.SetActive(false);
+            orig.SetActive(true);
+        }
+    }
 }
