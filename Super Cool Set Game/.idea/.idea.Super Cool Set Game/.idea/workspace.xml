@@ -26,13 +26,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a77b62a-aea2-482f-9e0e-3a6e63d74517" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Animation.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Fonts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Shaders.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Props/Barrel.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Props/WallCornerV1.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/UI.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/UI.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement/InteractablePuzzleLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Movement/InteractablePuzzleLoader.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/Action.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/Action.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/ActionStack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/ActionStack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/RingStack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/RingStack.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/BaseElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/BaseElement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Element.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Element.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Draggable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Draggable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Element.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/SpriteElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Element.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/SpriteElement.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/MutableSet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/MutableSet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation/Operation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation/Operation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation/Union.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation/Union.cs" afterDir="false" />
@@ -74,6 +84,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/2b/3250e6b9/HashSet`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/e3/69b62dc6/Bounds.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scenes/UI.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/Actions/Action.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file:///opt/Unity/2019.4.13f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/c6/b875dd4a/IEquatable`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/f6/388ac686/Color.cs" root0="SKIP_HIGHLIGHTING" />
@@ -143,24 +154,26 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/Puzzle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/ModuloInt.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/ActionStack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/RingStack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Draggable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/OperationManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation.Union.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/Puzzle.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/MutableSet.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/BaseElement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/SpriteElement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/BaseElement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Element.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/SetElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Movement/InteractablePuzzleLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/Action.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/ActionStack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/RingStack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation/Operation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation/Union.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/Puzzle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/SpriteElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/SetElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/BaseElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/BaseElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Draggable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Element.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/SpriteElement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/MutableSet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/Action.cs" />
       </list>
     </option>
   </component>
@@ -219,7 +232,7 @@
       <workItem from="1603852814573" duration="5444000" />
       <workItem from="1603897544324" duration="16205000" />
       <workItem from="1603990177887" duration="600000" />
-      <workItem from="1603992187469" duration="19636000" />
+      <workItem from="1603992187469" duration="21161000" />
     </task>
     <task id="LOCAL-00001" summary="Ugly demo">
       <created>1603676626334</created>
@@ -326,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604016389473</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Implement union">
+      <created>1604018934555</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1604018934555</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,7 +394,8 @@
     <MESSAGE value="shut up console" />
     <MESSAGE value="Implement undo/redo + start operation impl" />
     <MESSAGE value="save machine broke" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Implement union" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement union" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2946" y="534" width="498" height="335" key="#Notifications" timestamp="1604000083242">

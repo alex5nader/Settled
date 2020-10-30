@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace Puzzle.Actions {
+    /**
+     * Stack of performed actions. Manages undoing an redoing.
+     */
     public class ActionStack : MonoBehaviour {
         [SerializeField] private int bufferSize = 50;
         private RingStack<IAction> actions;

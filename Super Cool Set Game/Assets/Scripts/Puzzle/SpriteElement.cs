@@ -2,8 +2,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace Puzzle {
+    /**
+     * Component for sprite elements.
+     */
     [RequireComponent(typeof(Image))]
-    public class Element : BaseElement {
+    public class SpriteElement : BaseElement {
         private void Awake() {
             value = GetComponent<Image>().sprite.GetInstanceID();
         }
@@ -11,7 +14,7 @@ namespace Puzzle {
         public int value;
 
         public override bool Equals(BaseElement other) {
-            if (!(other is Element otherElement)) {
+            if (!(other is SpriteElement otherElement)) {
                 return false;
             }
 

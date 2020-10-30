@@ -1,6 +1,9 @@
 using System;
 
 namespace Puzzle.Actions {
+    /**
+     * Stack backed by a ring buffer. If the buffer is full, new elements will overwrite old elements.
+     */
     [Serializable]
     public struct RingStack<T> {
         private readonly T[] items;

@@ -2,6 +2,9 @@ using System;
 using UnityEngine;
 
 namespace Puzzle {
+    /**
+     * Component base for elements.
+     */
     public abstract class BaseElement : MonoBehaviour, IEquatable<BaseElement> {
         public abstract bool Equals(BaseElement other);
 

@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace Puzzle {
+    /**
+     * Component for set elements.
+     */
     [RequireComponent(typeof(GridLayoutGroup))]
     public class Set : BaseElement, IEnumerable<BaseElement> {
         private GridLayoutGroup grid;
@@ -29,7 +32,7 @@ namespace Puzzle {
         }
 
         private void ResizeCells(Vector2 parentCellSize) {
-            var size = parentCellSize.Min() / 3;
+            var size = parentCellSize.MinComponent() / 3;
             grid.cellSize = new Vector2(size, size);
         }
         

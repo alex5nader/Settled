@@ -3,6 +3,9 @@ using System.Linq;
 using UnityEngine;
 
 namespace Puzzle.Scriptable {
+    /**
+     * Scriptable object for a set element.
+     */
     [CreateAssetMenu(fileName = "Set Element", menuName = "Set Element", order = 0)]
     public class SetElement : BaseElement {
         public Sprite backgroundSprite;

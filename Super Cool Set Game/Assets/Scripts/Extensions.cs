@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -14,12 +13,7 @@ public static class Extensions {
         return ReferenceEquals(o, null);
     }
     
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static int FloorMod(this int x, int m) {
-        return (x%m + m) % m;
-    }
-    
-    public static float Min(this Vector2 vec) {
+    public static float MinComponent(this Vector2 vec) {
         return Math.Min(vec.x, vec.y);
     }
     

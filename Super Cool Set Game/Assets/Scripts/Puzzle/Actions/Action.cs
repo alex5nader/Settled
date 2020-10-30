@@ -5,11 +5,17 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace Puzzle.Actions {
+    /**
+     * A revertible action.
+     */
     public interface IAction {
         void Perform();
         void Undo();
     }
 
+    /**
+     * Represents moving an element from one set to another
+     */
     public readonly struct MoveElement : IAction {
         private readonly Draggable elementDrag;
         private readonly BaseElement element;
@@ -38,6 +44,9 @@ namespace Puzzle.Actions {
         }
     }
 
+    /**
+     * Represents adding an element to a set from outside of a set (for instance, from the elements tray).
+     */
     public readonly struct AddElement : IAction {
         private readonly Draggable elementDrag;
         private readonly BaseElement element;
@@ -64,6 +73,9 @@ namespace Puzzle.Actions {
         }
     }
 
+    /**
+     * Represents moving an element from a set into outside of a set (for instance, into the elements tray).
+     */
     public readonly struct RemoveElement : IAction {
         private readonly Draggable elementDrag;
         private readonly BaseElement element;
@@ -90,6 +102,9 @@ namespace Puzzle.Actions {
         }
     }
 
+    /**
+     * Represents unioning two sets together.
+     */
     public struct UnionSets : IAction {
         private readonly GridLayoutGroup input;
         

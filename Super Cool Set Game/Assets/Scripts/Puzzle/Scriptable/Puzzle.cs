@@ -7,6 +7,9 @@ using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 namespace Puzzle.Scriptable {
+    /**
+     * A single puzzle.
+     */
     [CreateAssetMenu(fileName = "Puzzle", menuName = "Puzzle", order = 0)]
     public class Puzzle : ScriptableObject {
 #pragma warning disable 0649
@@ -15,6 +18,9 @@ namespace Puzzle.Scriptable {
         [SerializeField] private SetElement target;
 #pragma warning restore 0649
 
+        /**
+         * Makes a sprite element which cannot be dragged.
+         */
         private static GameObject MakeFixedElement(SpriteElement data, Transform parent) {
             var go = new GameObject($"element {data.name}", typeof(RectTransform));
 
@@ -26,11 +32,14 @@ namespace Puzzle.Scriptable {
             rend.sprite = data.sprite;
             rend.color = new Color(Random.value, Random.value, Random.value);
 
-            go.AddComponent<Element>().Scriptable = data;
+            go.AddComponent<global::Puzzle.SpriteElement>().Scriptable = data;
 
             return go;
         }
 
+        /**
+         * Makes a sprite element which can be dragged.
+         */
         private static GameObject MakeFloatingElement(SpriteElement data,
             Transform parent,
             Transform dragHolder,
@@ -43,6 +52,9 @@ namespace Puzzle.Scriptable {
             return go;
         }
 
+        /**
+         * Makes a set element which cannot be dragged.
+         */
         public static GameObject MakeFixedSet(SetElement data, Transform parent, bool mutable,
             [CanBeNull] Transform dragHolder, [CanBeNull] Transform elementsTray, ActionStack actionStack) {
             var go = new GameObject("fixed set", typeof(RectTransform));
@@ -82,6 +94,9 @@ namespace Puzzle.Scriptable {
             return go;
         }
 
+        /**
+         * Makes a set element which can be dragged.
+         */
         private static void MakeFloatingSet(SetElement data,
             Transform parent,
             Transform dragHolder,
@@ -100,6 +115,9 @@ namespace Puzzle.Scriptable {
             go.GetComponent<Image>().color = new Color(Random.value, Random.value, Random.value);
         }
 
+        /**
+         * Creates all of this puzzle's tray elements.
+         */
         public void CreateElements(Transform elementsTray, Transform dragHolder, ActionStack actionStack) {
             foreach (var e in elements) {
                 switch (e) {
@@ -113,12 +131,21 @@ namespace Puzzle.Scriptable {
             }
         }
 
+        /**
+         * The number of non-draggable sets in this puzzle.
+         */
         public int FixedSetCount => fixedSets.Length;
 
+        /**
+         * Creates and returns all of this puzzle's non draggable sets.
+         */
         public IEnumerable<GameObject> CreateFixedSets(Transform parent, Transform dragHolder, Transform elementsTray,
             ActionStack actionStack) =>
             fixedSets.Select(s => MakeFixedSet(s, parent, true, dragHolder, elementsTray, actionStack));
 
+        /**
+         * Creates and returns this puzzle's target set.
+         */
         public GameObject CreateTargetSet(Transform parent, ActionStack actionStack) {
             var set = MakeFixedSet(target, parent, false, null, null, actionStack);
             set.name = "target set";

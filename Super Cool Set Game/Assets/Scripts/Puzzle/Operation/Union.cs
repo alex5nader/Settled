@@ -6,6 +6,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Puzzle.Operation {
+    /**
+     * The union set operation. Combines two sets, only leaving one copy of any duplicated elements.
+     */
     public class Union : Operation {
         private MutableSet a, b;
 

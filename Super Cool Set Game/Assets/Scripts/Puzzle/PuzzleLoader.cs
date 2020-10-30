@@ -6,6 +6,9 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Puzzle {
+    /**
+     * Component for loading puzzles.
+     */
     [RequireComponent(typeof(ActionStack))]
     public class PuzzleLoader : MonoBehaviour {
         public Scriptable.Puzzle puzzle;

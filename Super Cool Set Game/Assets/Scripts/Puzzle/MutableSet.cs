@@ -1,19 +1,14 @@
 using UnityEngine;
 
 namespace Puzzle {
+    /**
+     * Component for sets that can be edited by the player.
+     */
     public sealed class MutableSet : Set {
         public void Add(BaseElement element) {
             element.transform.SetParent(transform, true);
             Elements.Add(element);
             OnContentsChanged();
-        }
-
-        public void AddAll(Set other) {
-            foreach (var el in other) {
-                if (!Elements.Contains(el)) {
-                    Add(el);
-                }
-            }
         }
 
         public void Remove(BaseElement element, Transform newParent) {

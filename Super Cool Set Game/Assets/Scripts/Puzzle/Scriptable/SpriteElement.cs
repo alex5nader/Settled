@@ -1,6 +1,9 @@
 using UnityEngine;
 
 namespace Puzzle.Scriptable {
+    /**
+     * Scriptable object for a sprite element.
+     */
     [CreateAssetMenu(fileName = "Sprite Element", menuName = "Sprite Element", order = 0)]
     public class SpriteElement : BaseElement {
         public Sprite sprite;

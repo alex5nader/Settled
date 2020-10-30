@@ -6,6 +6,9 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Puzzle {
+    /**
+     * Component enabling the element to be dragged into, out of, and between sets.
+     */
     [RequireComponent(typeof(RectTransform), typeof(BaseElement))]
     public class Draggable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
         public delegate void ResizeEventHandler(Vector2 parentCellSize);
@@ -38,7 +41,7 @@ namespace Puzzle {
 
         public void OnPointerDown(PointerEventData eventData) {
             var newCellSize = holder.GetComponent<GridLayoutGroup>().cellSize;
-            offset = (Input.mousePosition - transform.position) * newCellSize.Min() / transform.rect.size.Min();
+            offset = (Input.mousePosition - transform.position) * newCellSize.MinComponent() / transform.rect.size.MinComponent();
 
             transform.SetParent(holder, true);
             TriggerResize(newCellSize);
