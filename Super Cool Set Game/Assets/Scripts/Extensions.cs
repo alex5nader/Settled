@@ -1,10 +1,15 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
 public static class Extensions {
+    public static int ActiveChildCount(this Transform tr) {
+        return tr.Children().Count(child => child.gameObject.activeSelf);
+    }
+    
     public static bool IsNull(this Object o) {
         return ReferenceEquals(o, null);
     }

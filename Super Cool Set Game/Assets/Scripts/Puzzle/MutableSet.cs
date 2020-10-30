@@ -8,6 +8,14 @@ namespace Puzzle {
             OnContentsChanged();
         }
 
+        public void AddAll(Set other) {
+            foreach (var el in other) {
+                if (!Elements.Contains(el)) {
+                    Add(el);
+                }
+            }
+        }
+
         public void Remove(BaseElement element, Transform newParent) {
             element.transform.SetParent(newParent, true);
             Remove(element);

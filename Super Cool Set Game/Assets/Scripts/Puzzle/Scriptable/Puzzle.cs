@@ -15,27 +15,27 @@ namespace Puzzle.Scriptable {
         [SerializeField] private SetElement target;
 #pragma warning restore 0649
 
-        private static GameObject MakeFixedElement(Sprite sprite, Transform parent) {
-            var go = new GameObject($"element {sprite.name}", typeof(RectTransform));
+        private static GameObject MakeFixedElement(SpriteElement data, Transform parent) {
+            var go = new GameObject($"element {data.name}", typeof(RectTransform));
 
             go.transform.SetParent(parent, false);
             var pos = go.transform.position;
             go.transform.position = new Vector3(pos.x, pos.y, pos.z + 1);
 
             var rend = go.AddComponent<Image>();
-            rend.sprite = sprite;
+            rend.sprite = data.sprite;
             rend.color = new Color(Random.value, Random.value, Random.value);
 
-            go.AddComponent<Element>();
+            go.AddComponent<Element>().Scriptable = data;
 
             return go;
         }
 
-        private static GameObject MakeFloatingElement(Sprite sprite,
+        private static GameObject MakeFloatingElement(SpriteElement data,
             Transform parent,
             Transform dragHolder,
             Transform elementsTray, ActionStack actionStack) {
-            var go = MakeFixedElement(sprite, parent);
+            var go = MakeFixedElement(data, parent);
             var drag = go.AddComponent<Draggable>();
             drag.holder = dragHolder;
             drag.elementsTray = elementsTray;
@@ -43,7 +43,7 @@ namespace Puzzle.Scriptable {
             return go;
         }
 
-        private static GameObject MakeFixedSet(SetElement data, Transform parent, bool mutable,
+        public static GameObject MakeFixedSet(SetElement data, Transform parent, bool mutable,
             [CanBeNull] Transform dragHolder, [CanBeNull] Transform elementsTray, ActionStack actionStack) {
             var go = new GameObject("fixed set", typeof(RectTransform));
 
@@ -58,17 +58,17 @@ namespace Puzzle.Scriptable {
             grid.childAlignment = TextAnchor.MiddleCenter;
 
             var set = mutable ? go.AddComponent<MutableSet>() : go.AddComponent<Set>();
+            set.Scriptable = data;
 
             if (data.elements.Count != 0) {
                 foreach (var child in data.elements) {
                     switch (child) {
-                    case SpriteElement element: {
+                    case SpriteElement element:
                         var elementGo = mutable
-                            ? MakeFloatingElement(element.sprite, tr, dragHolder, elementsTray, actionStack)
-                            : MakeFixedElement(element.sprite, tr);
+                            ? MakeFloatingElement(element, tr, dragHolder, elementsTray, actionStack)
+                            : MakeFixedElement(element, tr);
                         elementGo.transform.SetParent(tr, false);
                         break;
-                    }
                     case SetElement childSet:
                         var childGo = MakeFixedSet(childSet, tr, false, null, null, actionStack);
                         childGo.transform.SetParent(tr, false);
@@ -103,14 +103,12 @@ namespace Puzzle.Scriptable {
         public void CreateElements(Transform elementsTray, Transform dragHolder, ActionStack actionStack) {
             foreach (var e in elements) {
                 switch (e) {
-                case SpriteElement el: {
-                    MakeFloatingElement(el.sprite, elementsTray, dragHolder, elementsTray, actionStack);
+                case SpriteElement el:
+                    MakeFloatingElement(el, elementsTray, dragHolder, elementsTray, actionStack);
                     break;
-                }
-                case SetElement set: {
+                case SetElement set:
                     MakeFloatingSet(set, elementsTray, dragHolder, elementsTray, actionStack);
                     break;
-                }
                 }
             }
         }
@@ -119,7 +117,7 @@ namespace Puzzle.Scriptable {
 
         public IEnumerable<GameObject> CreateFixedSets(Transform parent, Transform dragHolder, Transform elementsTray,
             ActionStack actionStack) =>
-            fixedSets.Select(s => MakeFixedSet(s, parent, true, dragHolder, elementsTray, actionStack)).ToList();
+            fixedSets.Select(s => MakeFixedSet(s, parent, true, dragHolder, elementsTray, actionStack));
 
         public GameObject CreateTargetSet(Transform parent, ActionStack actionStack) {
             var set = MakeFixedSet(target, parent, false, null, null, actionStack);

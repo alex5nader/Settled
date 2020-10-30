@@ -2,14 +2,15 @@ using System;
 using System.Collections;
 using Puzzle.Actions;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Puzzle {
     [RequireComponent(typeof(ActionStack))]
     public class PuzzleLoader : MonoBehaviour {
-#pragma warning disable 0649
-        [SerializeField] private Scriptable.Puzzle puzzle;
+        public Scriptable.Puzzle puzzle;
         
+#pragma warning disable 0649
         [SerializeField] private float fadeLength;
 
         [SerializeField] private CanvasGroup worldUi;
@@ -18,12 +19,14 @@ namespace Puzzle {
         [SerializeField] private Button undoButton;
         [SerializeField] private Button redoButton;
         
-        [SerializeField] private RectTransform dragHolder;
-        [SerializeField] private RectTransform elementsTray;
-        [SerializeField] private GridLayoutGroup input;
-        [SerializeField] private GridLayoutGroup[] inputGridByCount;
         [SerializeField] private RectTransform output;
 #pragma warning restore 0649
+
+        public GridLayoutGroup input;
+        public RectTransform dragHolder;
+        public RectTransform elementsTray;
+        
+        [FormerlySerializedAs("inputGridByCount")] [SerializeField] public GridLayoutGroup[] inputGrids;
         
         public ActionStack ActionStack { get; private set; }
 
@@ -72,7 +75,7 @@ namespace Puzzle {
             if (tempCount == -1) {
                 tempCount = puzzle.FixedSetCount;
             }
-            input.cellSize = inputGridByCount[tempCount - 2].cellSize;
+            input.cellSize = inputGrids[tempCount - 2].cellSize;
             Destroy(input.transform.GetChild(tempCount - 1).gameObject);
             tempCount--;
         }
@@ -85,7 +88,7 @@ namespace Puzzle {
             
             puzzle.CreateElements(elementsTray, dragHolder, ActionStack);
 
-            input.cellSize = inputGridByCount[puzzle.FixedSetCount - 1].cellSize;
+            input.cellSize = inputGrids[puzzle.FixedSetCount - 1].cellSize;
 
             var sets = puzzle.CreateFixedSets(input.transform, dragHolder, elementsTray, ActionStack);
             foreach (var go in sets) {

@@ -1,18 +1,14 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Puzzle.Scriptable;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Puzzle {
     [RequireComponent(typeof(GridLayoutGroup))]
-    public class Set : BaseElement {
+    public class Set : BaseElement, IEnumerable<BaseElement> {
         private GridLayoutGroup grid;
 
-        public SetElement scriptableObject;
-        
         protected readonly HashSet<BaseElement> Elements = new HashSet<BaseElement>();
 
         private void Awake() {
@@ -55,15 +51,16 @@ namespace Puzzle {
             return Elements.SetEquals(otherSet.Elements);
         }
 
-        public override int GetHashCode() {
-            return Elements
-                .Select(b => b.GetHashCode())
-                .OrderBy(h => h)
-                .Aggregate(19, (hs, h) => hs * 31 + h);
-        }
-
         public override string ToString() {
             return $"{{{string.Join(", ", Elements.Select(e => e.ToString()))}}}";
+        }
+
+        public IEnumerator<BaseElement> GetEnumerator() {
+            return Elements.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() {
+            return Elements.GetEnumerator();
         }
     }
 }

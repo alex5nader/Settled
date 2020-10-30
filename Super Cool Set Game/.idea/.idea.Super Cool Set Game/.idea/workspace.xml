@@ -25,7 +25,24 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a77b62a-aea2-482f-9e0e-3a6e63d74517" name="Default Changelist" comment="" />
+    <list default="true" id="4a77b62a-aea2-482f-9e0e-3a6e63d74517" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Super Cool Set Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/UI.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/UI.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/Action.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/Action.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/BaseElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/BaseElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Element.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Element.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/MutableSet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/MutableSet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation/Operation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation/Operation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation/Union.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation/Union.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/BaseElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/BaseElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/Puzzle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/Puzzle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/SetElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/SetElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/SpriteElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/SpriteElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,47 +58,59 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RESET_MODE" value="KEEP" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/5f/be69c1d2/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/95/3cb76b31/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/b4/c7948038/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/8e/92c981fa/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DF49599F-9A5C-4F05-B0BB-9C3216693926/a5/bae92812/MouseButton.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A616560E-8B68-483F-8593-DD6DF05CAB38/03/7a9c09a4/BoxCollider2D.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file:///opt/Unity/2019.4.13f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventData/PointerEventData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/Operation/Union.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scenes/UI.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/ef/c529f582/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/Draggable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/27/dab98540/Time.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/2b/3250e6b9/HashSet`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/e3/69b62dc6/Bounds.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scenes/UI.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file:///opt/Unity/2019.4.13f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/c6/b875dd4a/IEquatable`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/f6/388ac686/Color.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/99258562-0D64-4271-98DD-F3A0E1467733/45/7580fbf1/020002E4.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/5f/bb5cabeb/RectTransform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/41/99f5ec36/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/45/9d27c0cd/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/95/3cb76b31/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file:///opt/Unity/2019.4.13f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventData/PointerEventData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/Set.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scenes/UI.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A42A0DB-0BFD-4389-9489-41F1DD09A11A/55/16440ee0/Bounds.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A07CF8C1-D55F-4294-BE89-9CB43B1AE07E/d0/a673c73f/IPointerDownHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file:///opt/Unity/2019.4.13f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/27/dab98540/Time.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A42A0DB-0BFD-4389-9489-41F1DD09A11A/8b/50a0a900/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/5A42A0DB-0BFD-4389-9489-41F1DD09A11A/97/263b5699/020000CD.il" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/2b/3250e6b9/HashSet`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/9d/936f0503/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A616560E-8B68-483F-8593-DD6DF05CAB38/cf/ee1a1b33/Physics2D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/Scriptable/Puzzle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/PuzzleLoader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/97/8243e3ea/SortedSet`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/e3/69b62dc6/Bounds.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A616560E-8B68-483F-8593-DD6DF05CAB38/d3/ac8ec555/PhysicsScene2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A616560E-8B68-483F-8593-DD6DF05CAB38/29/e97776e3/Collider2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A42A0DB-0BFD-4389-9489-41F1DD09A11A/77/dcf309b7/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file:///opt/Unity/2019.4.13f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/c6/b875dd4a/IEquatable`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A42A0DB-0BFD-4389-9489-41F1DD09A11A/f7/ceeebc6c/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/Draggable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A42A0DB-0BFD-4389-9489-41F1DD09A11A/e6/4bd5078f/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/7c/3d3a2459/Camera.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/f6/388ac686/Color.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/99258562-0D64-4271-98DD-F3A0E1467733/45/7580fbf1/020002E4.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/Actions/Action.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/cb/65f87f3d/Component.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/5f/bb5cabeb/RectTransform.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/41/99f5ec36/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file:///opt/Unity/2019.4.13f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventTrigger.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/701ED04D-BDB8-4B20-BD9E-BCA7DCC4A2FD/c3/e85c683c/Input.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/45/9d27c0cd/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/Operation/Operation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/ef/c25b41f0/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/cc/eb80b0af/Boolean.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A42A0DB-0BFD-4389-9489-41F1DD09A11A/f3/2b6b8172/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///data/Projects/super-cool-game/Super Cool Set Game/Assets/Scripts/Puzzle/MutableSet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/53/95a50933/Random.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A42A0DB-0BFD-4389-9489-41F1DD09A11A/d5/3336e3f1/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3F1FC468-A557-4D6A-8E6C-144E5EA03E10/cb/0c9cbb8e/UnityAction.cs" root0="SKIP_HIGHLIGHTING" />
@@ -109,27 +138,29 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Struct/Element.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Struct/FFI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Struct/Dummy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Element.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/DragFinished.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/IDragFinished.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Object/Puzzle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/ModuloInt.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/SetElement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/MutableSet.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/BaseElement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/Action.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/Puzzle.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/ActionStack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/RingStack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Draggable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/OperationManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation.Union.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Extensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation/Union.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation/Operation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/Puzzle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/MutableSet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/BaseElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/SpriteElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/BaseElement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Set.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Element.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Scriptable/SetElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation/Operation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Operation/Union.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/PuzzleLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Extensions.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Puzzle/Actions/Action.cs" />
       </list>
     </option>
   </component>
@@ -188,7 +219,7 @@
       <workItem from="1603852814573" duration="5444000" />
       <workItem from="1603897544324" duration="16205000" />
       <workItem from="1603990177887" duration="600000" />
-      <workItem from="1603992187469" duration="13778000" />
+      <workItem from="1603992187469" duration="19636000" />
     </task>
     <task id="LOCAL-00001" summary="Ugly demo">
       <created>1603676626334</created>
@@ -281,7 +312,21 @@
       <option name="project" value="LOCAL" />
       <updated>1604011664096</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="save machine broke">
+      <created>1604011890373</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1604011890373</updated>
+    </task>
+    <task id="LOCAL-00015">
+      <created>1604016389473</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1604016389473</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +373,8 @@
     <MESSAGE value="oops, no prefabs" />
     <MESSAGE value="shut up console" />
     <MESSAGE value="Implement undo/redo + start operation impl" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement undo/redo + start operation impl" />
+    <MESSAGE value="save machine broke" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2946" y="534" width="498" height="335" key="#Notifications" timestamp="1604000083242">
@@ -343,6 +389,10 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2919" y="506" width="614" height="391" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603683550169" />
+    <state x="2811" y="288" width="767" height="827" key="CommitChangelistDialog2" timestamp="1604016389476">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2811" y="288" width="767" height="827" key="CommitChangelistDialog2/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1604016389476" />
     <state x="1923" y="173" width="2360" height="1205" key="DiffContextDialog" timestamp="1603920408178">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -355,10 +405,10 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2795" y="437" width="800" height="528" key="Rider.ProjectTemplateDialog.Size/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1604000416268" />
-    <state x="2958" y="421" width="594" height="561" key="RiderGenerateDialog" timestamp="1604007846293">
+    <state x="2958" y="421" width="594" height="561" key="RiderGenerateDialog" timestamp="1604017476416">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2958" y="421" width="594" height="561" key="RiderGenerateDialog/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1604007846293" />
+    <state x="2958" y="421" width="594" height="561" key="RiderGenerateDialog/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1604017476416" />
     <state x="2834" y="244" width="1324" height="811" key="SettingsEditor" timestamp="1604000168720">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -371,18 +421,18 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2020" y="100" width="2360" height="1205" key="VCS.FileHistoryDialog/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603827854464" />
-    <state x="2795" y="438" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1603940735845">
+    <state x="2795" y="438" width="800" height="526" key="Vcs.Push.Dialog.v2" timestamp="1604011895226">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2795" y="438" width="800" height="526" key="Vcs.Push.Dialog.v2/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603940735845" />
+    <state x="2795" y="438" width="800" height="526" key="Vcs.Push.Dialog.v2/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1604011895226" />
     <state x="2980" y="430" width="430" height="542" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1603676283183">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2980" y="430" width="430" height="542" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603676283183" />
-    <state x="2875" y="275" width="649" height="855" key="find.popup" timestamp="1603940552137">
+    <state x="2875" y="275" width="649" height="855" key="find.popup" timestamp="1604015562754">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2875" y="275" width="649" height="855" key="find.popup/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1603940552137" />
+    <state x="2875" y="275" width="649" height="855" key="find.popup/1920.0.2560.1440/0.138.1920.1200@1920.0.2560.1440" timestamp="1604015562754" />
     <state x="2887" y="408" width="615" height="586" key="git4idea.branch.GitSmartOperationDialog" timestamp="1603677167902">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>

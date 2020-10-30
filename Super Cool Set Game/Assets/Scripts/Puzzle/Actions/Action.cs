@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Linq;
+using Puzzle.Scriptable;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -87,30 +90,49 @@ namespace Puzzle.Actions {
         }
     }
 
-    public readonly struct UnionSets : IAction {
-        private readonly RectTransform input;
-        private readonly MutableSet a, b;
+    public struct UnionSets : IAction {
+        private readonly GridLayoutGroup input;
+        
         private readonly GameObject aGo, bGo;
+        private readonly GameObject newGo;
 
-        public UnionSets(RectTransform input, MutableSet a, MutableSet b) {
-            this.input = input;
-            this.a = a;
-            this.b = b;
+        private readonly Vector2 oldCellSize;
+        private readonly Vector2 newCellSize;
+
+        // ReSharper disable twice SuggestBaseTypeForParameter
+        public UnionSets(PuzzleLoader puzzleLoader, MutableSet a, MutableSet b, ActionStack actionStack) {
+            input = puzzleLoader.input;
+            var inputTr = input.transform;
+
             aGo = a.gameObject;
             bGo = b.gameObject;
-        }
 
+            var count = inputTr.ActiveChildCount();
+            oldCellSize = puzzleLoader.inputGrids[count-1].cellSize;
+            newCellSize = puzzleLoader.inputGrids[count-2].cellSize;
+
+            var newSo = ScriptableObject.CreateInstance<SetElement>();
+            newSo.backgroundSprite = ((SetElement) a.Scriptable).backgroundSprite;
+            var newElements = new HashSet<Scriptable.BaseElement>();
+            newElements.UnionWith(a.Select(s => s.Scriptable));
+            newElements.UnionWith(b.Select(s => s.Scriptable));
+            newSo.elements = newElements.ToList();
+            
+            newGo = Scriptable.Puzzle.MakeFixedSet(newSo, input.transform, true, puzzleLoader.dragHolder, puzzleLoader.elementsTray, actionStack);
+        }
+    
         public void Perform() {
-            var unionGo = new GameObject();
-            unionGo.transform.SetParent(input, false);
-            a.AddUnionTo(unionGo, b);
-            Object.Destroy(aGo);
-            Object.Destroy(bGo);
+            input.cellSize = newCellSize;
+            newGo.SetActive(true);
+            aGo.SetActive(false);
+            bGo.SetActive(false);
         }
-
+    
         public void Undo() {
-            Object.Instantiate(aGo, input, false);
-            Object.Instantiate(bGo, input, false);
+            input.cellSize = oldCellSize;
+            newGo.SetActive(false);
+            aGo.SetActive(true);
+            bGo.SetActive(true);
         }
     }
 }

@@ -1,5 +1,7 @@
 using UnityEngine;
 
 namespace Puzzle.Scriptable {
-    public class BaseElement : ScriptableObject { }
+    public abstract class BaseElement : ScriptableObject {
+        public abstract override int GetHashCode();
+    }
 }

@@ -9,8 +9,14 @@ namespace Puzzle.Operation {
     public class Union : Operation {
         private MutableSet a, b;
 
+        private Coroutine coro;
+
         public void StartSelection() {
-            StartCoroutine(Selection());
+            if (coro != null) {
+                StopCoroutine(coro);
+            } else {
+                coro = StartCoroutine(Selection());
+            }
         }
 
         private IEnumerator Selection() {
@@ -32,16 +38,26 @@ namespace Puzzle.Operation {
                 }
             }
             
+            a = null;
             while (a.IsNull()) {
                 TryGetClicked(ref a);
                 yield return null;
             }
+            b = null;
             while (b.IsNull()) {
                 TryGetClicked(ref b);
                 yield return null;
             }
 
-            ActionStack.PerformAction(new UnionSets(input, a, b));
+            // ReSharper disable twice PossibleNullReferenceException
+            if (a.transform.GetSiblingIndex() > b.transform.GetSiblingIndex()) {
+                var tmp = a;
+                a = b;
+                b = tmp;
+            }
+
+            ActionStack.PerformAction(new UnionSets(PuzzleLoader, a, b, ActionStack));
+            coro = null;
         }
     }
 }

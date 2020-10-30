@@ -6679,7 +6679,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e0ff175eae4fc29011b617f843f7ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: {fileID: 2022391844}
 --- !u!114 &894114613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6713,15 +6712,15 @@ MonoBehaviour:
   puzzleUi: {fileID: 2048382862}
   undoButton: {fileID: 1207645351}
   redoButton: {fileID: 1720555126}
+  output: {fileID: 2131774584}
+  input: {fileID: 2022391845}
   dragHolder: {fileID: 297717143}
   elementsTray: {fileID: 350670098}
-  input: {fileID: 2022391845}
-  inputGridByCount:
+  inputGrids:
   - {fileID: 8119220210523266728, guid: de1fd18c9cc75de938b1ce515d4c5d6c, type: 3}
   - {fileID: 8939026155983047191, guid: 46e167c976ce25a40867deeb6a2d1bbc, type: 3}
   - {fileID: 2387296400079212035, guid: 49e6d99bb3f78fb239a7e7613fb9b13c, type: 3}
   - {fileID: 187030863324133909, guid: 07508bb7a4205dbe28ef537e1fccf1b2, type: 3}
-  output: {fileID: 2131774584}
 --- !u!4 &894114615
 Transform:
   m_ObjectHideFlags: 0

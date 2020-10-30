@@ -5,6 +5,12 @@ namespace Puzzle {
     public abstract class BaseElement : MonoBehaviour, IEquatable<BaseElement> {
         public abstract bool Equals(BaseElement other);
 
-        public abstract override int GetHashCode();
+        public sealed override int GetHashCode() {
+            // effectively final
+            // ReSharper disable once NonReadonlyMemberInGetHashCode
+            return Scriptable.GetHashCode();
+        }
+
+        public Scriptable.BaseElement Scriptable { get; set; }
     }
 }
