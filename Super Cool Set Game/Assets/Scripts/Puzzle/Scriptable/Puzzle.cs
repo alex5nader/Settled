@@ -30,7 +30,6 @@ namespace Puzzle.Scriptable {
 
             var rend = go.AddComponent<Image>();
             rend.sprite = data.sprite;
-            rend.color = new Color(Random.value, Random.value, Random.value);
 
             go.AddComponent<global::Puzzle.SpriteElement>().Scriptable = data;
 
@@ -84,7 +83,9 @@ namespace Puzzle.Scriptable {
                         elementGo.transform.SetParent(tr, false);
                         break;
                     case SetElement childSet:
-                        var childGo = MakeFixedSet(childSet, tr, false, null, null, actionStack);
+                        var childGo = mutable
+                            ? MakeFloatingSet(childSet, tr, dragHolder, elementsTray, actionStack)
+                            : MakeFixedSet(childSet, tr, false, dragHolder, elementsTray, actionStack);
                         childGo.transform.SetParent(tr, false);
                         break;
                     }
@@ -99,7 +100,7 @@ namespace Puzzle.Scriptable {
         /**
          * Makes a set element which can be dragged.
          */
-        private static void MakeFloatingSet(SetElement data,
+        private static GameObject MakeFloatingSet(SetElement data,
             Transform parent,
             Transform dragHolder,
             Transform elementsTray, ActionStack actionStack) {
@@ -114,7 +115,7 @@ namespace Puzzle.Scriptable {
             drag.elementsTray = elementsTray;
             drag.actionStack = actionStack;
 
-            go.GetComponent<Image>().color = new Color(Random.value, Random.value, Random.value);
+            return go;
         }
 
         /**
