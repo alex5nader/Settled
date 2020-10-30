@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be012f4349a64d89a2144eacd6517370, type: 3}
+  m_Name: Test Puzzle A
+  m_EditorClassIdentifier: 
+  elements:
+  - {fileID: 11400000, guid: 2fb6577908ca1faeab05ed8cc85996e1, type: 2}
+  - {fileID: 11400000, guid: bcc4531e8c0bd4a7facdfbf8d26c39b7, type: 2}
+  fixedSets:
+  - {fileID: 11400000, guid: 2fb6577908ca1faeab05ed8cc85996e1, type: 2}
+  - {fileID: 11400000, guid: bcc4531e8c0bd4a7facdfbf8d26c39b7, type: 2}
+  target: {fileID: 11400000, guid: b06a431928c9ee96dbf5b57f83270aa3, type: 2}

@@ -64,6 +64,16 @@ namespace Puzzle {
             StartCoroutine(Fade(worldUi, fadeLength, false, EnablePuzzleUI));
         }
 
+        /// <summary>
+        /// Begins a puzzle with the specified puzzle object.
+        /// </summary>
+        /// <param name="puzzleToLoad">The puzzle to load.</param>
+        public void BeginPuzzle(Object.Puzzle puzzleToLoad)
+        {
+            puzzle = puzzleToLoad;
+            BeginPuzzle();
+        }
+
         private void EnablePuzzleUI() {
             puzzleUi.gameObject.SetActive(true);
             worldUi.gameObject.SetActive(false);
