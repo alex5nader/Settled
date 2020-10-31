@@ -9,9 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95b5a5fbc9f14168a8e49a9503d92a41, type: 3}
-  m_Name: '{Square, Hexagon}'
+  m_Script: {fileID: 11500000, guid: be012f4349a64d89a2144eacd6517370, type: 3}
+  m_Name: 1 - Drag
   m_EditorClassIdentifier: 
   elements:
   - {fileID: 11400000, guid: d1aa041da862d7fe2911a9aa30c19832, type: 2}
-  - {fileID: 11400000, guid: 8f71df78c8b53fea2ac47edfc49338ee, type: 2}
+  fixedSets:
+  - {fileID: 0}
+  target: {fileID: 11400000, guid: ca9b1a63f03fa08c98f394db1a780f3f, type: 2}
+  unionCount: 0
+  intersectionCount: 0
+  differenceCount: 0
+  powersetCount: 0

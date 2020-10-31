@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be012f4349a64d89a2144eacd6517370, type: 3}
-  m_Name: 5
+  m_Name: 9 - Suddenly powerset because we ran out of rooms oh no
   m_EditorClassIdentifier: 
   elements:
-  - {fileID: 11400000, guid: fa4cc487d1abe8134a4c40db1d95b950, type: 2}
+  - {fileID: 11400000, guid: efa59b1e2cb248194ac1f114bf336f57, type: 2}
   fixedSets:
-  - {fileID: 11400000, guid: 60ea605c181f016eaad708c30158b501, type: 2}
-  target: {fileID: 11400000, guid: b5b85852dbb41e115ba381cf5b38e208, type: 2}
+  - {fileID: 11400000, guid: 59dbe3220aefa1a41a64d42523bf9cec, type: 2}
+  target: {fileID: 11400000, guid: ddeedffefbeb2bb02bc2822f619152da, type: 2}
   unionCount: 0
   intersectionCount: 0
   differenceCount: 0
-  powersetCount: 0
+  powersetCount: 1

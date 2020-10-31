@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be012f4349a64d89a2144eacd6517370, type: 3}
-  m_Name: 4
+  m_Name: 8 - How to Intersect
   m_EditorClassIdentifier: 
-  elements:
-  - {fileID: 11400000, guid: 306bd55bb009cfb3b980397a096b5bd1, type: 2}
+  elements: []
   fixedSets: []
-  target: {fileID: 11400000, guid: 60ea605c181f016eaad708c30158b501, type: 2}
+  target: {fileID: 0}
   unionCount: 0
-  intersectionCount: 0
+  intersectionCount: 1
   differenceCount: 0
   powersetCount: 0
