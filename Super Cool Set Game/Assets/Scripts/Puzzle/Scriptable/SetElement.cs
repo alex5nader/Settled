@@ -8,7 +8,6 @@ namespace Puzzle.Scriptable {
      */
     [CreateAssetMenu(fileName = "Set Element", menuName = "Set Element", order = 0)]
     public class SetElement : BaseElement {
-        public Sprite backgroundSprite;
         public List<BaseElement> elements;
 
         public override int GetHashCode() {
