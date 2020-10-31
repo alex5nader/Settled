@@ -128,12 +128,13 @@ namespace Puzzle.Actions {
 
             var newSo = ScriptableObject.CreateInstance<SetElement>();
             newSo.backgroundSprite = ((SetElement) a.Scriptable).backgroundSprite;
-            var newElements = new HashSet<Scriptable.BaseElement>();
-            newElements.UnionWith(a.Select(s => s.Scriptable));
+            var newElements = new HashSet<Scriptable.BaseElement>(a.Select(s => s.Scriptable));
             newElements.UnionWith(b.Select(s => s.Scriptable));
             newSo.elements = newElements.ToList();
             
             newGo = Scriptable.Puzzle.MakeFixedSet(newSo, input.transform, true, puzzleLoader.dragHolder, puzzleLoader.elementsTray, actionStack);
+            
+            puzzleLoader.SubscribeToChanges(newGo.GetComponent<MutableSet>());
         }
     
         public void Perform() {
@@ -148,6 +149,170 @@ namespace Puzzle.Actions {
             newGo.SetActive(false);
             aGo.SetActive(true);
             bGo.SetActive(true);
+        }
+    }
+
+    /**
+     * Represents intersection-ing two sets together.
+     */
+    public struct IntersectSets : IAction {
+        private readonly GridLayoutGroup input;
+        
+        private readonly GameObject aGo, bGo;
+        private readonly GameObject newGo;
+
+        private readonly Vector2 oldCellSize;
+        private readonly Vector2 newCellSize;
+
+        // ReSharper disable twice SuggestBaseTypeForParameter
+        public IntersectSets(PuzzleLoader puzzleLoader, MutableSet a, MutableSet b, ActionStack actionStack) {
+            input = puzzleLoader.input;
+            var inputTr = input.transform;
+
+            aGo = a.gameObject;
+            bGo = b.gameObject;
+
+            var count = inputTr.ActiveChildCount();
+            oldCellSize = puzzleLoader.inputGrids[count-1].cellSize;
+            newCellSize = puzzleLoader.inputGrids[count-2].cellSize;
+
+            var newSo = ScriptableObject.CreateInstance<SetElement>();
+            newSo.backgroundSprite = ((SetElement) a.Scriptable).backgroundSprite;
+            var newElements = new HashSet<Scriptable.BaseElement>(a.Select(s => s.Scriptable));
+            newElements.IntersectWith(b.Select(s => s.Scriptable));
+            newSo.elements = newElements.ToList();
+            
+            newGo = Scriptable.Puzzle.MakeFixedSet(newSo, input.transform, true, puzzleLoader.dragHolder, puzzleLoader.elementsTray, actionStack);
+            
+            puzzleLoader.SubscribeToChanges(newGo.GetComponent<MutableSet>());
+        }
+    
+        public void Perform() {
+            input.cellSize = newCellSize;
+            newGo.SetActive(true);
+            aGo.SetActive(false);
+            bGo.SetActive(false);
+        }
+    
+        public void Undo() {
+            input.cellSize = oldCellSize;
+            newGo.SetActive(false);
+            aGo.SetActive(true);
+            bGo.SetActive(true);
+        }
+    }
+
+    /**
+     * Represents intersection-ing two sets together.
+     */
+    public struct SubtractSets : IAction {
+        private readonly GridLayoutGroup input;
+        
+        private readonly GameObject aGo, bGo;
+        private readonly GameObject newGo;
+
+        private readonly Vector2 oldCellSize;
+        private readonly Vector2 newCellSize;
+
+        // ReSharper disable twice SuggestBaseTypeForParameter
+        public SubtractSets(PuzzleLoader puzzleLoader, MutableSet a, MutableSet b, ActionStack actionStack) {
+            input = puzzleLoader.input;
+            var inputTr = input.transform;
+
+            aGo = a.gameObject;
+            bGo = b.gameObject;
+
+            var count = inputTr.ActiveChildCount();
+            oldCellSize = puzzleLoader.inputGrids[count-1].cellSize;
+            newCellSize = puzzleLoader.inputGrids[count-2].cellSize;
+
+            var newSo = ScriptableObject.CreateInstance<SetElement>();
+            newSo.backgroundSprite = ((SetElement) a.Scriptable).backgroundSprite;
+            var newElements = new HashSet<Scriptable.BaseElement>(a.Select(s => s.Scriptable));
+            newElements.ExceptWith(b.Select(s => s.Scriptable));
+            newSo.elements = newElements.ToList();
+            
+            newGo = Scriptable.Puzzle.MakeFixedSet(newSo, input.transform, true, puzzleLoader.dragHolder, puzzleLoader.elementsTray, actionStack);
+            
+            puzzleLoader.SubscribeToChanges(newGo.GetComponent<MutableSet>());
+        }
+    
+        public void Perform() {
+            input.cellSize = newCellSize;
+            newGo.SetActive(true);
+            aGo.SetActive(false);
+            bGo.SetActive(false);
+        }
+    
+        public void Undo() {
+            input.cellSize = oldCellSize;
+            newGo.SetActive(false);
+            aGo.SetActive(true);
+            bGo.SetActive(true);
+        }
+    }
+
+    public readonly struct MakePowerset : IAction {
+        private readonly GridLayoutGroup input;
+
+        private readonly GameObject orig;
+        private readonly GameObject powerset;
+
+        private readonly Vector2 oldCellSize;
+        private readonly Vector2 newCellSize;
+
+        // ReSharper disable twice SuggestBaseTypeForParameter
+        public MakePowerset(PuzzleLoader puzzleLoader, MutableSet original, ActionStack actionStack) {
+            input = puzzleLoader.input;
+            var inputTr = input.transform;
+
+            orig = original.gameObject;
+
+            var count = inputTr.ActiveChildCount();
+            oldCellSize = puzzleLoader.inputGrids[count-1].cellSize;
+            newCellSize = puzzleLoader.inputGrids[count-2].cellSize;
+
+            var background = ((SetElement) original.Scriptable).backgroundSprite;
+
+            var elements = original.ToList();
+
+            var subsets = new List<Scriptable.BaseElement>();
+
+            for (var i = (1 << original.Count) - 1; i >= 0; i--) {
+                var subset = new List<Scriptable.BaseElement>();
+
+                for (var j = 0; j < original.Count; j++) {
+                    if ((i & (1 << j)) != 0) {
+                        subset.Add(elements[j].Scriptable);
+                    }
+                }
+
+                var scriptable = ScriptableObject.CreateInstance<SetElement>();
+                scriptable.backgroundSprite = background;
+                scriptable.elements = subset;
+                
+                subsets.Add(scriptable);
+            }
+
+            var powersetScriptable = ScriptableObject.CreateInstance<SetElement>();
+            powersetScriptable.backgroundSprite = background;
+            powersetScriptable.elements = subsets;
+
+            powerset = Scriptable.Puzzle.MakeFixedSet(powersetScriptable, inputTr, true, puzzleLoader.dragHolder, puzzleLoader.elementsTray, actionStack);
+            
+            puzzleLoader.SubscribeToChanges(powerset.GetComponent<MutableSet>());
+        }
+    
+        public void Perform() {
+            input.cellSize = newCellSize;
+            powerset.SetActive(true);
+            orig.SetActive(false);
+        }
+    
+        public void Undo() {
+            input.cellSize = oldCellSize;
+            powerset.SetActive(false);
+            orig.SetActive(true);
         }
     }
 }

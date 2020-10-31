@@ -14,6 +14,8 @@ namespace Puzzle {
 
         protected readonly HashSet<BaseElement> Elements = new HashSet<BaseElement>();
 
+        public int Count => Elements.Count;
+
         private void Awake() {
             grid = GetComponent<GridLayoutGroup>();
 

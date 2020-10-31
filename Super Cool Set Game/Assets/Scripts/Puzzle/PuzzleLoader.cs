@@ -83,14 +83,9 @@ namespace Puzzle {
             CreatePuzzle();
         }
 
-        private int tempCount = -1;
-        public void RemoveFixedSet() {
-            if (tempCount == -1) {
-                tempCount = puzzle.FixedSetCount;
-            }
-            input.cellSize = inputGrids[tempCount - 2].cellSize;
-            Destroy(input.transform.GetChild(tempCount - 1).gameObject);
-            tempCount--;
+        public void SubscribeToChanges(MutableSet set) {
+            set.ContentsChanged += () => CheckComplete(set);
+            CheckComplete(set);
         }
 
         private void CreatePuzzle() {
@@ -105,8 +100,7 @@ namespace Puzzle {
 
             var sets = puzzle.CreateFixedSets(input.transform, dragHolder, elementsTray, ActionStack);
             foreach (var go in sets) {
-                var set = go.GetComponent<MutableSet>();
-                set.ContentsChanged += () => CheckComplete(set);
+                SubscribeToChanges(go.GetComponent<MutableSet>());
             }
 
             var newTarget = puzzle.CreateTargetSet(output, ActionStack);
