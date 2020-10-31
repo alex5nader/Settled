@@ -1,10 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using Puzzle.Operation;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
 public static class Extensions {
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static int ToIndex(this Operation op) {
+        return (int) op - 1;
+    }
+    
     public static int ActiveChildCount(this Transform tr) {
         return tr.Children().Count(child => child.gameObject.activeSelf);
     }

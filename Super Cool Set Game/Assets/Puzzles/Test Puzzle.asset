@@ -22,3 +22,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2fb6577908ca1faeab05ed8cc85996e1, type: 2}
   - {fileID: 0}
   target: {fileID: 11400000, guid: b06a431928c9ee96dbf5b57f83270aa3, type: 2}
+  unionCount: 2
+  intersectionCount: 3
+  differenceCount: 0
+  powersetCount: 0

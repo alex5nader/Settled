@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Puzzle.Actions;
+using Puzzle.Operation;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -9,7 +10,7 @@ namespace Puzzle {
     /**
      * Component for loading puzzles.
      */
-    [RequireComponent(typeof(ActionStack))]
+    [RequireComponent(typeof(ActionStack), typeof(Operations))]
     public class PuzzleLoader : MonoBehaviour {
         public Scriptable.Puzzle puzzle;
         
@@ -34,11 +35,13 @@ namespace Puzzle {
         [FormerlySerializedAs("inputGridByCount")] [SerializeField] public GridLayoutGroup[] inputGrids;
         
         public ActionStack ActionStack { get; private set; }
+        private Operations operations;
 
         private Set target;
 
         private void Awake() {
             ActionStack = GetComponent<ActionStack>();
+            operations = GetComponent<Operations>();
             
             worldUi.gameObject.SetActive(true);
             worldUi.alpha = 1;
@@ -96,6 +99,15 @@ namespace Puzzle {
         }
 
         private void CreatePuzzle(bool fadeIn = true) {
+            operations.operationUses[Operation.Operation.Union.ToIndex()] = puzzle.unionCount;
+            operations.operationUsesTexts[Operation.Operation.Union.ToIndex()].text = puzzle.unionCount.ToString();
+            operations.operationUses[Operation.Operation.Intersection.ToIndex()] = puzzle.intersectionCount;
+            operations.operationUsesTexts[Operation.Operation.Intersection.ToIndex()].text = puzzle.intersectionCount.ToString();
+            operations.operationUses[Operation.Operation.Difference.ToIndex()] = puzzle.differenceCount;
+            operations.operationUsesTexts[Operation.Operation.Difference.ToIndex()].text = puzzle.differenceCount.ToString();
+            operations.operationUses[Operation.Operation.Powerset.ToIndex()] = puzzle.powersetCount;
+            operations.operationUsesTexts[Operation.Operation.Powerset.ToIndex()].text = puzzle.powersetCount.ToString();
+
             ActionStack.Clear();
             
             undoButton.interactable = false;

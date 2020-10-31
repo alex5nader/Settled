@@ -6720,6 +6720,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6377fdbe743c4b2bb775443451dc9387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  operationUses: 00000000000000000000000000000000
+  operationUsesTexts:
+  - {fileID: 710914397}
+  - {fileID: 1031047036}
+  - {fileID: 1550577714}
+  - {fileID: 1729884201}
   buttonImages:
   - {fileID: 364845139}
   - {fileID: 866303973}

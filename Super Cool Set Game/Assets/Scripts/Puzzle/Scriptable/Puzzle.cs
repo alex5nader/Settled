@@ -18,6 +18,11 @@ namespace Puzzle.Scriptable {
         [SerializeField] private SetElement target;
 #pragma warning restore 0649
 
+        public int unionCount;
+        public int intersectionCount;
+        public int differenceCount;
+        public int powersetCount;
+
         /**
          * Makes a sprite element which cannot be dragged.
          */
