@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ad9550160c8d24c4681e519cab4ded76, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d3c39956167799c46aeda993a567b40d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -181,3 +181,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionLabel: Start Puzzle
   puzzle: {fileID: 11400000, guid: e63deaa398f5addbcadc7b4ade78c236, type: 2}
+  gate: {fileID: 0}
