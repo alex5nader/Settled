@@ -6762,6 +6762,7 @@ MonoBehaviour:
   input: {fileID: 2022391845}
   dragHolder: {fileID: 297717143}
   elementsTray: {fileID: 350670098}
+  setBackground: {fileID: 21300000, guid: 1d1b20f9b001c904f918036067ead2f3, type: 3}
   inputGrids:
   - {fileID: 8119220210523266728, guid: de1fd18c9cc75de938b1ce515d4c5d6c, type: 3}
   - {fileID: 8939026155983047191, guid: 46e167c976ce25a40867deeb6a2d1bbc, type: 3}

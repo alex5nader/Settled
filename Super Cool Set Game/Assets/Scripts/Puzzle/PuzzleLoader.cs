@@ -28,6 +28,8 @@ namespace Puzzle {
         public GridLayoutGroup input;
         public RectTransform dragHolder;
         public RectTransform elementsTray;
+
+        public Sprite setBackground;
         
         [FormerlySerializedAs("inputGridByCount")] [SerializeField] public GridLayoutGroup[] inputGrids;
         
@@ -94,16 +96,16 @@ namespace Puzzle {
             undoButton.interactable = false;
             redoButton.interactable = false;
             
-            puzzle.CreateElements(elementsTray, dragHolder, ActionStack);
+            puzzle.CreateElements(setBackground, elementsTray, dragHolder, ActionStack);
 
             input.cellSize = inputGrids[puzzle.FixedSetCount - 1].cellSize;
 
-            var sets = puzzle.CreateFixedSets(input.transform, dragHolder, elementsTray, ActionStack);
+            var sets = puzzle.CreateFixedSets(setBackground, input.transform, dragHolder, elementsTray, ActionStack);
             foreach (var go in sets) {
                 SubscribeToChanges(go.GetComponent<MutableSet>());
             }
 
-            var newTarget = puzzle.CreateTargetSet(output, ActionStack);
+            var newTarget = puzzle.CreateTargetSet(setBackground, output, ActionStack);
             target = newTarget.GetComponent<Set>();
 
             StartCoroutine(Fade(puzzleUi, fadeLength, true, StopTime));

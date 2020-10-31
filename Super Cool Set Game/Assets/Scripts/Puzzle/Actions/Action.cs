@@ -127,12 +127,11 @@ namespace Puzzle.Actions {
             newCellSize = puzzleLoader.inputGrids[count-2].cellSize;
 
             var newSo = ScriptableObject.CreateInstance<SetElement>();
-            newSo.backgroundSprite = ((SetElement) a.Scriptable).backgroundSprite;
             var newElements = new HashSet<Scriptable.BaseElement>(a.Select(s => s.Scriptable));
             newElements.UnionWith(b.Select(s => s.Scriptable));
             newSo.elements = newElements.ToList();
             
-            newGo = Scriptable.Puzzle.MakeFixedSet(newSo, input.transform, true, puzzleLoader.dragHolder, puzzleLoader.elementsTray, actionStack);
+            newGo = Scriptable.Puzzle.MakeFixedSet(puzzleLoader.setBackground, newSo, input.transform, true, puzzleLoader.dragHolder, puzzleLoader.elementsTray, actionStack);
             
             puzzleLoader.SubscribeToChanges(newGo.GetComponent<MutableSet>());
         }
@@ -177,12 +176,11 @@ namespace Puzzle.Actions {
             newCellSize = puzzleLoader.inputGrids[count-2].cellSize;
 
             var newSo = ScriptableObject.CreateInstance<SetElement>();
-            newSo.backgroundSprite = ((SetElement) a.Scriptable).backgroundSprite;
             var newElements = new HashSet<Scriptable.BaseElement>(a.Select(s => s.Scriptable));
             newElements.IntersectWith(b.Select(s => s.Scriptable));
             newSo.elements = newElements.ToList();
             
-            newGo = Scriptable.Puzzle.MakeFixedSet(newSo, input.transform, true, puzzleLoader.dragHolder, puzzleLoader.elementsTray, actionStack);
+            newGo = Scriptable.Puzzle.MakeFixedSet(puzzleLoader.setBackground, newSo, input.transform, true, puzzleLoader.dragHolder, puzzleLoader.elementsTray, actionStack);
             
             puzzleLoader.SubscribeToChanges(newGo.GetComponent<MutableSet>());
         }
@@ -227,12 +225,11 @@ namespace Puzzle.Actions {
             newCellSize = puzzleLoader.inputGrids[count-2].cellSize;
 
             var newSo = ScriptableObject.CreateInstance<SetElement>();
-            newSo.backgroundSprite = ((SetElement) a.Scriptable).backgroundSprite;
             var newElements = new HashSet<Scriptable.BaseElement>(a.Select(s => s.Scriptable));
             newElements.ExceptWith(b.Select(s => s.Scriptable));
             newSo.elements = newElements.ToList();
             
-            newGo = Scriptable.Puzzle.MakeFixedSet(newSo, input.transform, true, puzzleLoader.dragHolder, puzzleLoader.elementsTray, actionStack);
+            newGo = Scriptable.Puzzle.MakeFixedSet(puzzleLoader.setBackground, newSo, input.transform, true, puzzleLoader.dragHolder, puzzleLoader.elementsTray, actionStack);
             
             puzzleLoader.SubscribeToChanges(newGo.GetComponent<MutableSet>());
         }
@@ -258,9 +255,6 @@ namespace Puzzle.Actions {
         private readonly GameObject orig;
         private readonly GameObject powerset;
 
-        private readonly Vector2 oldCellSize;
-        private readonly Vector2 newCellSize;
-
         // ReSharper disable twice SuggestBaseTypeForParameter
         public MakePowerset(PuzzleLoader puzzleLoader, MutableSet original, ActionStack actionStack) {
             input = puzzleLoader.input;
@@ -269,10 +263,6 @@ namespace Puzzle.Actions {
             orig = original.gameObject;
 
             var count = inputTr.ActiveChildCount();
-            oldCellSize = puzzleLoader.inputGrids[count-1].cellSize;
-            newCellSize = puzzleLoader.inputGrids[count-2].cellSize;
-
-            var background = ((SetElement) original.Scriptable).backgroundSprite;
 
             var elements = original.ToList();
 
@@ -288,29 +278,25 @@ namespace Puzzle.Actions {
                 }
 
                 var scriptable = ScriptableObject.CreateInstance<SetElement>();
-                scriptable.backgroundSprite = background;
                 scriptable.elements = subset;
                 
                 subsets.Add(scriptable);
             }
 
             var powersetScriptable = ScriptableObject.CreateInstance<SetElement>();
-            powersetScriptable.backgroundSprite = background;
             powersetScriptable.elements = subsets;
 
-            powerset = Scriptable.Puzzle.MakeFixedSet(powersetScriptable, inputTr, true, puzzleLoader.dragHolder, puzzleLoader.elementsTray, actionStack);
+            powerset = Scriptable.Puzzle.MakeFixedSet(puzzleLoader.setBackground, powersetScriptable, inputTr, true, puzzleLoader.dragHolder, puzzleLoader.elementsTray, actionStack);
             
             puzzleLoader.SubscribeToChanges(powerset.GetComponent<MutableSet>());
         }
     
         public void Perform() {
-            input.cellSize = newCellSize;
             powerset.SetActive(true);
             orig.SetActive(false);
         }
     
         public void Undo() {
-            input.cellSize = oldCellSize;
             powerset.SetActive(false);
             orig.SetActive(true);
         }

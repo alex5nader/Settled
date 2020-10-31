@@ -54,7 +54,7 @@ namespace Puzzle.Scriptable {
         /**
          * Makes a set element which cannot be dragged.
          */
-        public static GameObject MakeFixedSet(SetElement data, Transform parent, bool mutable,
+        public static GameObject MakeFixedSet(Sprite setBackground, SetElement data, Transform parent, bool mutable,
             [CanBeNull] Transform dragHolder, [CanBeNull] Transform elementsTray, ActionStack actionStack) {
             var go = new GameObject("fixed set", typeof(RectTransform));
 
@@ -64,13 +64,19 @@ namespace Puzzle.Scriptable {
             tr.position = new Vector3(pos.x, pos.y, pos.z + 1);
 
             var image = go.AddComponent<Image>();
-            image.sprite = data.backgroundSprite;
+            image.sprite = setBackground;
             image.type = Image.Type.Sliced;
 
             var grid = go.AddComponent<GridLayoutGroup>();
             grid.childAlignment = TextAnchor.MiddleCenter;
 
             var set = mutable ? go.AddComponent<MutableSet>() : go.AddComponent<Set>();
+
+            if (data.IsNull()) {
+                data = CreateInstance<SetElement>();
+                data.elements = new List<BaseElement>();
+            }
+            
             set.Scriptable = data;
 
             if (data.elements.Count != 0) {
@@ -84,8 +90,8 @@ namespace Puzzle.Scriptable {
                         break;
                     case SetElement childSet:
                         var childGo = mutable
-                            ? MakeFloatingSet(childSet, tr, dragHolder, elementsTray, actionStack)
-                            : MakeFixedSet(childSet, tr, false, dragHolder, elementsTray, actionStack);
+                            ? MakeFloatingSet(setBackground, childSet, tr, dragHolder, elementsTray, actionStack)
+                            : MakeFixedSet(setBackground, childSet, tr, false, dragHolder, elementsTray, actionStack);
                         childGo.transform.SetParent(tr, false);
                         break;
                     }
@@ -100,11 +106,11 @@ namespace Puzzle.Scriptable {
         /**
          * Makes a set element which can be dragged.
          */
-        private static GameObject MakeFloatingSet(SetElement data,
+        private static GameObject MakeFloatingSet(Sprite setBackground, SetElement data,
             Transform parent,
             Transform dragHolder,
             Transform elementsTray, ActionStack actionStack) {
-            var go = MakeFixedSet(data, parent, false, dragHolder, elementsTray, actionStack);
+            var go = MakeFixedSet(setBackground, data, parent, false, dragHolder, elementsTray, actionStack);
 
             go.name = "floating set";
 
@@ -121,14 +127,14 @@ namespace Puzzle.Scriptable {
         /**
          * Creates all of this puzzle's tray elements.
          */
-        public void CreateElements(Transform elementsTray, Transform dragHolder, ActionStack actionStack) {
+        public void CreateElements(Sprite setBackground, Transform elementsTray, Transform dragHolder, ActionStack actionStack) {
             foreach (var e in elements) {
                 switch (e) {
                 case SpriteElement el:
                     MakeFloatingElement(el, elementsTray, dragHolder, elementsTray, actionStack);
                     break;
                 case SetElement set:
-                    MakeFloatingSet(set, elementsTray, dragHolder, elementsTray, actionStack);
+                    MakeFloatingSet(setBackground, set, elementsTray, dragHolder, elementsTray, actionStack);
                     break;
                 }
             }
@@ -142,15 +148,15 @@ namespace Puzzle.Scriptable {
         /**
          * Creates and returns all of this puzzle's non draggable sets.
          */
-        public IEnumerable<GameObject> CreateFixedSets(Transform parent, Transform dragHolder, Transform elementsTray,
+        public IEnumerable<GameObject> CreateFixedSets(Sprite setBackground, Transform parent, Transform dragHolder, Transform elementsTray,
             ActionStack actionStack) =>
-            fixedSets.Select(s => MakeFixedSet(s, parent, true, dragHolder, elementsTray, actionStack));
+            fixedSets.Select(s => MakeFixedSet(setBackground, s, parent, true, dragHolder, elementsTray, actionStack));
 
         /**
          * Creates and returns this puzzle's target set.
          */
-        public GameObject CreateTargetSet(Transform parent, ActionStack actionStack) {
-            var set = MakeFixedSet(target, parent, false, null, null, actionStack);
+        public GameObject CreateTargetSet(Sprite setBackground, Transform parent, ActionStack actionStack) {
+            var set = MakeFixedSet(setBackground, target, parent, false, null, null, actionStack);
             set.name = "target set";
             return set;
         }

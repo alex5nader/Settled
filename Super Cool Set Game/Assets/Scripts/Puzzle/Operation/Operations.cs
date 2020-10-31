@@ -19,7 +19,7 @@ namespace Puzzle.Operation {
         
         private ActionStack actionStack;
         private PuzzleLoader puzzleLoader;
-        
+
         [SerializeField] private Image[] buttonImages;
         
         private Operation operation;
