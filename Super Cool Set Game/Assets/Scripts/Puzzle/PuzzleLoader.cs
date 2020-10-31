@@ -2,17 +2,22 @@ using System;
 using System.Collections;
 using Puzzle.Actions;
 using Puzzle.Operation;
+using Puzzle.Scriptable;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Puzzle {
+
+    public delegate void OnPuzzleComplete();
+
     /**
      * Component for loading puzzles.
      */
     [RequireComponent(typeof(ActionStack), typeof(Operations))]
     public class PuzzleLoader : MonoBehaviour {
-        public Scriptable.Puzzle puzzle;
+        private Scriptable.Puzzle puzzle = null;
+        public OnPuzzleComplete currentPuzzleComplete;
         
 #pragma warning disable 0649
         [SerializeField] private float fadeLength;
@@ -68,18 +73,35 @@ namespace Puzzle {
         }
 
         #region Puzzle Entrance
-        public void BeginPuzzle() {
-            StartCoroutine(Fade(worldUi, fadeLength, false, EnablePuzzleUI));
+
+        /// <summary>
+        /// Begin puzzle with no delegate to call (necessary for Unity Serialization to be used with Buttons)
+        /// </summary>
+        /// <param name="puzzleToLoad">The puzzle to load.</param>
+        public void BeginPuzzle(Puzzle.Scriptable.Puzzle puzzleToLoad)
+        {
+            BeginPuzzle(puzzleToLoad, null);
         }
 
         /// <summary>
         /// Begins a puzzle with the specified puzzle object.
         /// </summary>
         /// <param name="puzzleToLoad">The puzzle to load.</param>
-        public void BeginPuzzle(Puzzle.Scriptable.Puzzle puzzleToLoad)
+        /// <param name="onPuzzleComplete">The delegate to call when the puzzle is complete.</param>
+        public void BeginPuzzle(Puzzle.Scriptable.Puzzle puzzleToLoad, OnPuzzleComplete onPuzzleComplete = null)
         {
+            if (puzzle) // check that we are not loading multiple puzzles at once
+            {
+                Debug.Log("Cannot start new puzzle because a puzzle is already loaded.");
+                return;
+            }
+
+            // if the on complete delegate is not null, assign it
+            currentPuzzleComplete += onPuzzleComplete ?? (() => { });
+
             puzzle = puzzleToLoad;
-            BeginPuzzle();
+
+            StartCoroutine(Fade(worldUi, fadeLength, false, EnablePuzzleUI));
         }
 
         public void ResetPuzzle() {
@@ -137,10 +159,25 @@ namespace Puzzle {
 
         #region Puzzle Exit
         private void CheckComplete(MutableSet changed) {
-            if (changed.Equals(target)) {
-                Time.timeScale = 1;
-                StartCoroutine(Fade(puzzleUi, fadeLength, false, DisablePuzzleUI));
-            }
+            if (changed.Equals(target))
+                CompletePuzzle();
+        }
+
+        private void CompletePuzzle()
+        {
+            GameManager.MarkPuzzleComplete(puzzle);
+            currentPuzzleComplete?.Invoke();            // call the completed puzzle delegate
+            currentPuzzleComplete = null;
+
+            ClosePuzzle();
+        }
+
+        private void ClosePuzzle()
+        {
+            Time.timeScale = 1;
+            StartCoroutine(Fade(puzzleUi, fadeLength, false, DisablePuzzleUI));
+
+            puzzle = null;
         }
 
         private void DisablePuzzleUI() {
