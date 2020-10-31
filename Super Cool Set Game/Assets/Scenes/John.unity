@@ -7368,6 +7368,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 7db42917c98a283c6bc4634dde884eab,
         type: 2}
+    - target: {fileID: 5663048963411552675, guid: ac341a094a841f54c9f6f09ad2668fe0,
+        type: 3}
+      propertyPath: actionLabel
+      value: Press Enter
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac341a094a841f54c9f6f09ad2668fe0, type: 3}
 --- !u!4 &1211431132 stripped
@@ -7547,6 +7552,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: bfe003bd157c140c38a607ba2514a6b3,
         type: 2}
+    - target: {fileID: 5663048963411552675, guid: ac341a094a841f54c9f6f09ad2668fe0,
+        type: 3}
+      propertyPath: actionLabel
+      value: Press Enter
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac341a094a841f54c9f6f09ad2668fe0, type: 3}
 --- !u!4 &1371553337 stripped
@@ -10881,6 +10891,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 30aec1e27ccb22bdea68d8ee82a21e39,
         type: 2}
+    - target: {fileID: 5663048963411552675, guid: ac341a094a841f54c9f6f09ad2668fe0,
+        type: 3}
+      propertyPath: actionLabel
+      value: Press Enter
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac341a094a841f54c9f6f09ad2668fe0, type: 3}
 --- !u!4 &1462623526 stripped
@@ -12401,6 +12416,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 17a86ffdee86e205aa8263323410f175,
         type: 2}
+    - target: {fileID: 5663048963411552675, guid: ac341a094a841f54c9f6f09ad2668fe0,
+        type: 3}
+      propertyPath: actionLabel
+      value: Press Enter
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac341a094a841f54c9f6f09ad2668fe0, type: 3}
 --- !u!4 &1938287974 stripped
@@ -12574,6 +12594,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a1246ecdf2be953d395cdf10b700bf2f,
         type: 2}
+    - target: {fileID: 5663048963411552675, guid: ac341a094a841f54c9f6f09ad2668fe0,
+        type: 3}
+      propertyPath: actionLabel
+      value: Press Enter
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac341a094a841f54c9f6f09ad2668fe0, type: 3}
 --- !u!4 &2030124555 stripped
@@ -13420,6 +13445,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: cfd904b06679e153385d14c10cf29db8,
         type: 2}
+    - target: {fileID: 5663048963411552675, guid: ac341a094a841f54c9f6f09ad2668fe0,
+        type: 3}
+      propertyPath: actionLabel
+      value: Press Enter
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac341a094a841f54c9f6f09ad2668fe0, type: 3}
 --- !u!1001 &6407592403651237404
