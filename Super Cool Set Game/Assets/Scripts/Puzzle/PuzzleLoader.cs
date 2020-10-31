@@ -79,6 +79,11 @@ namespace Puzzle {
             BeginPuzzle();
         }
 
+        public void ResetPuzzle() {
+            RemovePuzzle();
+            CreatePuzzle(false);
+        }
+
         private void EnablePuzzleUI() {
             puzzleUi.gameObject.SetActive(true);
             worldUi.gameObject.SetActive(false);
@@ -90,7 +95,7 @@ namespace Puzzle {
             CheckComplete(set);
         }
 
-        private void CreatePuzzle() {
+        private void CreatePuzzle(bool fadeIn = true) {
             ActionStack.Clear();
             
             undoButton.interactable = false;
@@ -108,7 +113,9 @@ namespace Puzzle {
             var newTarget = puzzle.CreateTargetSet(setBackground, output, ActionStack);
             target = newTarget.GetComponent<Set>();
 
-            StartCoroutine(Fade(puzzleUi, fadeLength, true, StopTime));
+            if (fadeIn) {
+                StartCoroutine(Fade(puzzleUi, fadeLength, true, StopTime));
+            }
         }
 
         private void StopTime() {
