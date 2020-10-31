@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98647a6c0d448d1813205951b013f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzle: {fileID: 11400000, guid: e63deaa398f5addbcadc7b4ade78c236, type: 2}
   fadeLength: 0.5
   worldUi: {fileID: 0}
   puzzleUi: {fileID: 0}
@@ -55,6 +54,7 @@ MonoBehaviour:
   input: {fileID: 0}
   dragHolder: {fileID: 0}
   elementsTray: {fileID: 0}
+  setBackground: {fileID: 21300000, guid: 1d1b20f9b001c904f918036067ead2f3, type: 3}
   inputGrids:
   - {fileID: 8119220210523266728, guid: de1fd18c9cc75de938b1ce515d4c5d6c, type: 3}
   - {fileID: 8939026155983047191, guid: 46e167c976ce25a40867deeb6a2d1bbc, type: 3}
@@ -87,6 +87,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6377fdbe743c4b2bb775443451dc9387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  operationUses: 00000000000000000000000000000000
+  operationUsesTexts: []
   buttonImages:
   - {fileID: 0}
   - {fileID: 0}
