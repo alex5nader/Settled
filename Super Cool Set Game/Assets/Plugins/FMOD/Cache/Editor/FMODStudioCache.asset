@@ -18,11 +18,11 @@ MonoBehaviour:
   - {fileID: 9034384370756080539}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 405000
+  Length: 398000
 --- !u!114 &-2889672499922015486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
   - {fileID: 9034384370756080539}
   StringsBanks:
   - {fileID: 5964385623475424530}
-  stringsBankWriteTime: 637396797300377085
+  stringsBankWriteTime: 637396929302765354
   cacheVersion: 5
 --- !u!114 &635829659806531707
 MonoBehaviour:
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: ../../../../FMOD/Projects/gamejam/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637396797300377085
+  lastModified: 637396929302765354
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: ../../../../FMOD/Projects/gamejam/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637396797300337192
+  lastModified: 637396929302725463
   LoadResult: 0
   FileSizes: []
   Exists: 1
