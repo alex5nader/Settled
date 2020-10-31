@@ -93,7 +93,9 @@ namespace Puzzle.Operation {
             if (oldOperation != Operation.Powerset) {
                 StartOperation(Operation.Powerset);
                 coro = StartCoroutine(SelectSets(1, sets => {
-                    actionStack.PerformAction(new MakePowerset(puzzleLoader, sets[0], actionStack));
+                    if (sets[0].Count <= 3) {
+                        actionStack.PerformAction(new MakePowerset(puzzleLoader, sets[0], actionStack));                        
+                    }
                     FinishOperation();
                 }));
             }
