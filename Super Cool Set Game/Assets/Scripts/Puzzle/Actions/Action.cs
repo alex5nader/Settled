@@ -115,7 +115,7 @@ namespace Puzzle.Actions {
         private readonly Vector2 newCellSize;
 
         // ReSharper disable twice SuggestBaseTypeForParameter
-        public UnionSets(PuzzleLoader puzzleLoader, MutableSet a, MutableSet b, ActionStack actionStack) {
+        public UnionSets(PuzzleLoader puzzleLoader, Set a, Set b, ActionStack actionStack) {
             input = puzzleLoader.input;
             var inputTr = input.transform;
 
@@ -123,8 +123,9 @@ namespace Puzzle.Actions {
             bGo = b.gameObject;
 
             var count = inputTr.ActiveChildCount();
+            var delta = a.RemovalDelta + b.RemovalDelta + 1;
             oldCellSize = puzzleLoader.inputGrids[count-1].cellSize;
-            newCellSize = puzzleLoader.inputGrids[count-2].cellSize;
+            newCellSize = puzzleLoader.inputGrids[count-1-delta].cellSize;
 
             var newSo = ScriptableObject.CreateInstance<SetElement>();
             var newElements = new HashSet<Scriptable.BaseElement>(a.Select(s => s.Scriptable));
@@ -164,7 +165,7 @@ namespace Puzzle.Actions {
         private readonly Vector2 newCellSize;
 
         // ReSharper disable twice SuggestBaseTypeForParameter
-        public IntersectSets(PuzzleLoader puzzleLoader, MutableSet a, MutableSet b, ActionStack actionStack) {
+        public IntersectSets(PuzzleLoader puzzleLoader, Set a, Set b, ActionStack actionStack) {
             input = puzzleLoader.input;
             var inputTr = input.transform;
 
@@ -172,8 +173,9 @@ namespace Puzzle.Actions {
             bGo = b.gameObject;
 
             var count = inputTr.ActiveChildCount();
+            var delta = a.RemovalDelta + b.RemovalDelta + 1;
             oldCellSize = puzzleLoader.inputGrids[count-1].cellSize;
-            newCellSize = puzzleLoader.inputGrids[count-2].cellSize;
+            newCellSize = puzzleLoader.inputGrids[count-1-delta].cellSize;
 
             var newSo = ScriptableObject.CreateInstance<SetElement>();
             var newElements = new HashSet<Scriptable.BaseElement>(a.Select(s => s.Scriptable));
@@ -213,7 +215,7 @@ namespace Puzzle.Actions {
         private readonly Vector2 newCellSize;
 
         // ReSharper disable twice SuggestBaseTypeForParameter
-        public SubtractSets(PuzzleLoader puzzleLoader, MutableSet a, MutableSet b, ActionStack actionStack) {
+        public SubtractSets(PuzzleLoader puzzleLoader, Set a, Set b, ActionStack actionStack) {
             input = puzzleLoader.input;
             var inputTr = input.transform;
 
@@ -221,8 +223,9 @@ namespace Puzzle.Actions {
             bGo = b.gameObject;
 
             var count = inputTr.ActiveChildCount();
+            var delta = a.RemovalDelta + b.RemovalDelta + 1;
             oldCellSize = puzzleLoader.inputGrids[count-1].cellSize;
-            newCellSize = puzzleLoader.inputGrids[count-2].cellSize;
+            newCellSize = puzzleLoader.inputGrids[count-1-delta].cellSize;
 
             var newSo = ScriptableObject.CreateInstance<SetElement>();
             var newElements = new HashSet<Scriptable.BaseElement>(a.Select(s => s.Scriptable));
@@ -250,19 +253,14 @@ namespace Puzzle.Actions {
     }
 
     public readonly struct MakePowerset : IAction {
-        private readonly GridLayoutGroup input;
-
         private readonly GameObject orig;
         private readonly GameObject powerset;
 
         // ReSharper disable twice SuggestBaseTypeForParameter
-        public MakePowerset(PuzzleLoader puzzleLoader, MutableSet original, ActionStack actionStack) {
-            input = puzzleLoader.input;
-            var inputTr = input.transform;
+        public MakePowerset(PuzzleLoader puzzleLoader, Set original, ActionStack actionStack) {
+            var inputTr = puzzleLoader.input.transform;
 
             orig = original.gameObject;
-
-            var count = inputTr.ActiveChildCount();
 
             var elements = original.ToList();
 

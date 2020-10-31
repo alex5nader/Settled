@@ -76,6 +76,7 @@ namespace Puzzle.Scriptable {
             grid.childAlignment = TextAnchor.MiddleCenter;
 
             var set = mutable ? go.AddComponent<MutableSet>() : go.AddComponent<Set>();
+            set.RemovalDelta = -1;
 
             if (data.IsNull()) {
                 data = CreateInstance<SetElement>();
@@ -116,6 +117,9 @@ namespace Puzzle.Scriptable {
             Transform dragHolder,
             Transform elementsTray, ActionStack actionStack) {
             var go = MakeFixedSet(setBackground, data, parent, false, dragHolder, elementsTray, actionStack);
+
+            var set = go.GetComponent<Set>();
+            set.RemovalDelta = 0;
 
             go.name = "floating set";
 

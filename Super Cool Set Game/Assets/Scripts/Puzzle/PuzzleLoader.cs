@@ -42,7 +42,7 @@ namespace Puzzle {
         public ActionStack ActionStack { get; private set; }
         private Operations operations;
 
-        private Set target;
+        public Set target;
 
         private void Awake() {
             ActionStack = GetComponent<ActionStack>();

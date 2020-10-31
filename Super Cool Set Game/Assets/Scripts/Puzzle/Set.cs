@@ -16,6 +16,11 @@ namespace Puzzle {
 
         public int Count => Elements.Count;
 
+        /**
+         * Change in the number of fixed sets if this set is removed.
+         */
+        public int RemovalDelta;
+
         private void Awake() {
             grid = GetComponent<GridLayoutGroup>();
 

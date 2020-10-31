@@ -115,8 +115,8 @@ namespace Puzzle.Operation {
             }
         }
         
-        private static IEnumerator SelectSets(int count, Action<MutableSet[]> withSets) {
-            var sets = new MutableSet[count];
+        private IEnumerator SelectSets(int count, Action<Set[]> withSets) {
+            var sets = new Set[count];
             for (var i = 0; i < count; i++) {
                 while (sets[i].IsNull()) {
                     if (Input.GetMouseButtonDown(0)) {
@@ -125,11 +125,11 @@ namespace Puzzle.Operation {
                         EventSystem.current.RaycastAll(data, list);
 
                         var hoveredSet = list
-                            .Select(res => res.gameObject.GetComponent<MutableSet>())
+                            .Select(res => res.gameObject.GetComponent<Set>())
                             .FirstOrDefault(s => s);
 
                         // ReSharper disable once PossibleNullReferenceException
-                        if (!hoveredSet.IsNull()) {
+                        if (!hoveredSet.IsNull() && !ReferenceEquals(hoveredSet, puzzleLoader.target)) {
                             sets[i] = hoveredSet;
                         }
                     }
