@@ -14,4 +14,14 @@ public class GameManager : MonoBehaviour
 
         return puzzleLoader;
     }
+
+    [SerializeField] private Puzzle.Scriptable.Puzzle[] puzzles;
+
+    public static void MarkPuzzleComplete(Puzzle.Scriptable.Puzzle puzzle)
+    {
+        if (!puzzle)
+            Debug.Log("Puzzle is null. Please pass a valid puzzle.");
+
+
+    }
 }
