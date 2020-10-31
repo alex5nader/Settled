@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static PuzzleLoader GetPuzzleLoader()
     {
         if (puzzleLoader == null)
-            puzzleLoader = GameObject.Find("Puzzle Loader").GetComponent<PuzzleLoader>();
+            puzzleLoader = GameObject.Find("Puzzle Manager").GetComponent<PuzzleLoader>();
 
         return puzzleLoader;
     }
