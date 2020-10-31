@@ -30,6 +30,7 @@ namespace Puzzle.Actions {
         }
 
         public void Perform() {
+            Debug.Log("moving");
             from.Remove(element);
             to.Add(element);
             elementDrag.ParentSet = to;
@@ -61,6 +62,7 @@ namespace Puzzle.Actions {
         }
 
         public void Perform() {
+            Debug.Log("adding");
             to.Add(element);
             elementDrag.ParentSet = to;
             elementDrag.TriggerResize(to.GetComponent<GridLayoutGroup>().cellSize);
@@ -90,6 +92,7 @@ namespace Puzzle.Actions {
         }
 
         public void Perform() {
+            Debug.Log("removing");
             from.Remove(element, to);
             elementDrag.ParentSet = null;
             elementDrag.TriggerResize(to.GetComponent<GridLayoutGroup>().cellSize);

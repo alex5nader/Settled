@@ -8,10 +8,13 @@ namespace Puzzle {
     [RequireComponent(typeof(Image))]
     public class SpriteElement : BaseElement {
         private void Awake() {
-            value = GetComponent<Image>().sprite.GetInstanceID();
+            var sprite = GetComponent<Image>().sprite;
+            value = sprite.GetInstanceID();
+            repr = sprite.name;
         }
         
         public int value;
+        private string repr;
 
         public override bool Equals(BaseElement other) {
             if (!(other is SpriteElement otherElement)) {
@@ -22,7 +25,7 @@ namespace Puzzle {
         }
 
         public override string ToString() {
-            return value.ToString();
+            return repr;
         }
     }
 }

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95b5a5fbc9f14168a8e49a9503d92a41, type: 3}
-  m_Name: '{{Hexagon},{Hexagon}}'
+  m_Name: '{{Square},{Hexagon}}'
   m_EditorClassIdentifier: 
   elements:
-  - {fileID: 11400000, guid: efa59b1e2cb248194ac1f114bf336f57, type: 2}
+  - {fileID: 11400000, guid: ca9b1a63f03fa08c98f394db1a780f3f, type: 2}
   - {fileID: 11400000, guid: efa59b1e2cb248194ac1f114bf336f57, type: 2}

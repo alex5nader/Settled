@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: 6 - How to Union
   m_EditorClassIdentifier: 
   elements:
-  - {fileID: 11400000, guid: 60ea605c181f016eaad708c30158b501, type: 2}
+  - {fileID: 11400000, guid: 306bd55bb009cfb3b980397a096b5bd1, type: 2}
   fixedSets:
   - {fileID: 0}
   target: {fileID: 11400000, guid: 306bd55bb009cfb3b980397a096b5bd1, type: 2}
-  unionCount: 0
+  unionCount: 1
   intersectionCount: 0
   differenceCount: 0
   powersetCount: 0

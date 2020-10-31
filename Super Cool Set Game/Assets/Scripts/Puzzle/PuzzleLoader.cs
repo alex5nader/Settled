@@ -3,6 +3,7 @@ using System.Collections;
 using Puzzle.Actions;
 using Puzzle.Operation;
 using Puzzle.Scriptable;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -88,7 +89,7 @@ namespace Puzzle {
         /// </summary>
         /// <param name="puzzleToLoad">The puzzle to load.</param>
         /// <param name="onPuzzleComplete">The delegate to call when the puzzle is complete.</param>
-        public void BeginPuzzle(Puzzle.Scriptable.Puzzle puzzleToLoad, OnPuzzleComplete onPuzzleComplete = null)
+        public void BeginPuzzle(Puzzle.Scriptable.Puzzle puzzleToLoad, OnPuzzleComplete onPuzzleComplete)
         {
             if (puzzle) // check that we are not loading multiple puzzles at once
             {
@@ -143,6 +144,8 @@ namespace Puzzle {
             foreach (var go in sets) {
                 SubscribeToChanges(go.GetComponent<MutableSet>());
             }
+            
+            Debug.Log("puzzle = " + puzzle.name, puzzle);
 
             var newTarget = puzzle.CreateTargetSet(setBackground, output, ActionStack);
             target = newTarget.GetComponent<Set>();
@@ -159,8 +162,16 @@ namespace Puzzle {
 
         #region Puzzle Exit
         private void CheckComplete(MutableSet changed) {
-            if (changed.Equals(target))
+            if (target.IsNull()) {
+                return;
+            }
+            
+            Debug.Log("changed: " + changed, changed);
+            Debug.Log("target: " + target, target);
+
+            if (changed.Equals(target)) {
                 CompletePuzzle();
+            }
         }
 
         private void CompletePuzzle()
@@ -174,10 +185,12 @@ namespace Puzzle {
 
         private void ClosePuzzle()
         {
+            Debug.Log("closing puzzle");
             Time.timeScale = 1;
             StartCoroutine(Fade(puzzleUi, fadeLength, false, DisablePuzzleUI));
 
             puzzle = null;
+            target = null;
         }
 
         private void DisablePuzzleUI() {

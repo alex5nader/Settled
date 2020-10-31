@@ -30,6 +30,11 @@ namespace Puzzle {
         private void Awake() {
             transform = GetComponent<RectTransform>();
             element = GetComponent<BaseElement>();
+
+            var set = transform.parent.GetComponent<MutableSet>();
+            if (set) {
+                ParentSet = set;
+            }
         }
 
         private void Update() {
