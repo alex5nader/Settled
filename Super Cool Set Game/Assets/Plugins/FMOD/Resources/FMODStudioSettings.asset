@@ -129,8 +129,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../../../FMOD/Projects/gamejam/gamejam.fspro
-  sourceBankPath: ..\..\..\..\FMOD\Projects\gamejam\Build
+  sourceProjectPath: Assets/FMOD project/FMODproj/FMODproj.fspro
+  sourceBankPath: Assets\FMOD project\FMODproj\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -149,7 +149,8 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
